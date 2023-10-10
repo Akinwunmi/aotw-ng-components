@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Library
+/projects/aotw-lib-ng/node_modules
