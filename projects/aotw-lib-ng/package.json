@@ -1,6 +1,6 @@
 {
   "name": "@aotw/lib-ng",
-  "version": "0.0.1-beta.4",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/cdk": "^16.2.0",
     "@angular/common": "^16.2.0",

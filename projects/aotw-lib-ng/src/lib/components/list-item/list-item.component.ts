@@ -12,7 +12,7 @@ import {
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './list-item.component.html',
+  templateUrl: './list-item.component.html'
 })
 export class AotwListItemComponent {
   @Input()
