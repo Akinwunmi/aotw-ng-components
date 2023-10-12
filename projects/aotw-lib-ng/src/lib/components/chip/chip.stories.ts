@@ -10,7 +10,7 @@ import { AotwChipComponent } from './chip.component';
 type ChipArgs = AotwChipComponent & {
   icon: string;
   label: string;
-}
+};
 
 const args: ChipArgs = {
   active: false,

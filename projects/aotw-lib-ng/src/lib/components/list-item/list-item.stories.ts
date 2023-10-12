@@ -11,7 +11,7 @@ type ListItemArgs = AotwListItemComponent & {
   label: string;
   prefix: string;
   suffix: string;
-}
+};
 
 const args: ListItemArgs = {
   active: false,
