@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng run aotw-lib-ng:storybook",
     "build": "ng build aotw-lib-ng",
+    "build:storybook": "ng run aotw-lib-ng:build-storybook",
     "publish": "cd dist/aotw-lib-ng && npm publish --access=public",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -19,6 +20,8 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@aotw/components": "^0.0.1",
+    "@aotw/core": "^0.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -27,6 +30,14 @@
     "@angular-devkit/build-angular": "^16.2.5",
     "@angular/cli": "~16.2.3",
     "@angular/compiler-cli": "^16.2.0",
+    "@compodoc/compodoc": "^1.1.21",
+    "@storybook/addon-docs": "^7.4.6",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/angular": "^7.4.6",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -35,6 +46,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^16.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.4.6",
     "typescript": "~5.1.3"
   }
 }

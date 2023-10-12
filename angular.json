@@ -33,6 +33,39 @@
               "zone.js/testing"
             ]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/aotw-lib-ng/.storybook",
+            "browserTarget": "aotw-lib-ng:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/aotw-lib-ng"
+            ],
+            "styles": [
+              "node_modules/@aotw/core/dist/style.css"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/aotw-lib-ng/.storybook",
+            "browserTarget": "aotw-lib-ng:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/aotw-lib-ng"
+            ],
+            "outputDir": "storybook-static"
+          }
         }
       }
     }
