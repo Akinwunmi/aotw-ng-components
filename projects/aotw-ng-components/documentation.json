@@ -1,0 +1,3095 @@
+{
+    "pipes": [
+        {
+            "name": "RangePipe",
+            "id": "pipe-RangePipe-d2a182217b2fc900c8bda6fe873d7ff4653f34a695b8ea4863e3e2d26c6e5f9378ac0fe689aed0681b4c248dc0cd0baa318769296989ae6cbbb4c4bd9f04e8d7",
+            "file": "projects/aotw-ng-components/src/lib/pipes/range.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "range",
+                            "type": "[number, number]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number[]",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "range",
+                            "type": "[number, number]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "standalone": true,
+            "ngname": "range",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'range',\n  standalone: true\n})\nexport class RangePipe implements PipeTransform {\n\n  public transform(range: [number, number]): number[] {\n    if (!range) {\n      return [];\n    }\n\n    return Array(range[1] - range[0] + 1).fill(0).map((_, i) => {\n      return range[0] + i;\n    });\n  }\n\n}\n"
+        }
+    ],
+    "interfaces": [
+        {
+            "name": "Chip",
+            "id": "interface-Chip-466258e10c9da6a35b0d8e9d015677c82883e425af635bb189afbb80454e8a6b643465a32a7ae92b97a6619dd48448ebf1a33bc1136603f2a6ca9c297de1904d",
+            "file": "projects/aotw-ng-components/src/lib/components/chip/chip.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Chip {\n  id: string;\n  label: string;\n  icon?: string;\n  active: boolean;\n  disabled: boolean;\n}\n",
+            "properties": [
+                {
+                    "name": "active",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Step",
+            "id": "interface-Step-c140b87475c6bd3a9f8d5ce614abc4497ba0bf0b2cec17b31fc1d636dcabb11f0056b5c0c97660ea26409cd4245142b56dc8b5a53dfe73693520c5116e2c698d",
+            "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Step {\n\tlabel: string;\n\tdisabled: boolean;\n}\n",
+            "properties": [
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Tab",
+            "id": "interface-Tab-d1f59de95968e06c6f7439e6578da568edc52588ad0fe23faf780696456a9562aee44f0ecd2e9f6e718e381ccf2449f80b908006612f6a4e0aa782559667c4ba",
+            "file": "projects/aotw-ng-components/src/lib/components/tab-group/tab-group.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Tab {\n  id: number;\n  name: string;\n  label: string;\n  disabled: boolean;\n}\n",
+            "properties": [
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "AotwStepperService",
+            "id": "injectable-AotwStepperService-0af925aa676c7b28aea0919aaf8d0412934fa8cc265e10af709a8babb301705820018da5b9f2c6d7d256a33b6d8cd2417a742bd5d6936bb2d746e0f5d86b23dc",
+            "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.service.ts",
+            "properties": [
+                {
+                    "name": "steps$",
+                    "defaultValue": "new Subject<Step[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "setSteps",
+                    "args": [
+                        {
+                            "name": "steps",
+                            "type": "Step[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "steps",
+                            "type": "Step[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Subject } from 'rxjs';\n\nimport { Step } from './stepper.model';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AotwStepperService {\n  public steps$ = new Subject<Step[]>();\n\n  public setSteps(steps: Step[]): void {\n    return this.steps$.next(steps);\n  }\n}\n",
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [
+        {
+            "name": "AotwDropdownDirective",
+            "id": "directive-AotwDropdownDirective-7b81accce298ade4c5c3cbe334beed0924ef145292a460496d4abab7d93f4531d4b7d067204d173f39ab5a30c7606c6a805a44c219f57a8af2587b64e7d0c922",
+            "file": "projects/aotw-ng-components/src/lib/directives/dropdown.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { ConnectedPosition, Overlay, OverlayRef } from '@angular/cdk/overlay';\nimport { TemplatePortal } from '@angular/cdk/portal';\nimport {\n  Directive,\n  ElementRef,\n  HostListener,\n  inject,\n  Input,\n  OnChanges,\n  OnDestroy,\n  TemplateRef,\n  ViewContainerRef\n} from '@angular/core';\nimport { merge, Observable, of, Subject, takeUntil } from 'rxjs';\n\n@Directive({\n  selector: '[aotwDropdownTrigger]',\n  standalone: true\n})\nexport class AotwDropdownDirective implements OnChanges, OnDestroy {\n  @Input('aotwDropdownTrigger')\n  public contentRef!: TemplateRef<unknown>;\n\n  @Input()\n  public isOpen = false;\n\n  @HostListener('click')\n  public toggle(): void {\n    this.isOpen ? this.detach() : this.open();\n  }\n\n  private elementRef = inject(ElementRef<HTMLElement>);\n  private overlay = inject(Overlay);\n  private viewContainerRef = inject(ViewContainerRef);\n\n  private overlayRef?: OverlayRef;\n\n  private unsubscribe$ = new Subject<void>();\n\n  public ngOnChanges(): void {\n    if (!this.isOpen) {\n      this.detach();\n    }\n  }\n\n  public ngOnDestroy(): void {\n    this.overlayRef?.dispose();\n    this.unsubscribe$.next();\n    this.unsubscribe$.complete();\n  }\n\n  private open(): void {\n    const position: ConnectedPosition = {\n      originX: 'start',\n      originY: 'bottom',\n      overlayX: 'start',\n      overlayY: 'top',\n      offsetY: 4\n    };\n    const templatePortal = new TemplatePortal(\n      this.contentRef,\n      this.viewContainerRef\n    );\n\n    this.isOpen = true;\n    this.overlayRef = this.overlay.create({\n      hasBackdrop: true,\n      backdropClass: 'cdk-overlay-transparent-backdrop',\n      scrollStrategy: this.overlay.scrollStrategies.reposition(),\n      positionStrategy: this.overlay\n        .position()\n        .flexibleConnectedTo(this.elementRef)\n        .withPositions([position])\n    });\n    this.overlayRef.attach(templatePortal);\n\n    this.actions().pipe(\n      takeUntil(this.unsubscribe$)\n    ).subscribe(() => {\n      this.detach();\n    });\n  }\n\n  private actions(): Observable<MouseEvent | void> {\n    if (!this.overlayRef) {\n      return of();\n    }\n\n    const backdropClick$ = this.overlayRef.backdropClick();\n    const detachments$ = this.overlayRef.detachments();\n\n    return merge(backdropClick$, detachments$);\n  }\n\n  private detach(): void {\n    this.isOpen = false;\n    this.overlayRef?.detach();\n  }\n}\n",
+            "selector": "[aotwDropdownTrigger]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": true,
+            "inputsClass": [
+                {
+                    "name": "aotwDropdownTrigger",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "TemplateRef<>",
+                    "decorators": []
+                },
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "click",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "elementRef",
+                    "defaultValue": "inject(ElementRef<HTMLElement>)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 32,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "overlay",
+                    "defaultValue": "inject(Overlay)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "overlayRef",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "OverlayRef",
+                    "optional": true,
+                    "description": "",
+                    "line": 36,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "unsubscribe$",
+                    "defaultValue": "new Subject<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "viewContainerRef",
+                    "defaultValue": "inject(ViewContainerRef)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "actions",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<MouseEvent | void>",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "detach",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 95,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "open",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'click'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170,
+                        125
+                    ]
+                }
+            ],
+            "extends": [],
+            "implements": [
+                "OnChanges",
+                "OnDestroy"
+            ]
+        }
+    ],
+    "components": [
+        {
+            "name": "AotwChipComponent",
+            "id": "component-AotwChipComponent-695d9150969aa7c7d951164ea911272ea0510dfc1f9e98250802fe20addd1553ae23b3879a2a0329ee149ad39d51523bc6ed2ba573d74f376778a04d6a8dbbe7",
+            "file": "projects/aotw-ng-components/src/lib/components/chip/chip.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-chip",
+            "styleUrls": [
+                "./chip.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chip.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "active",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "\"small\" | \"medium\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onMouseDown",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mousedown', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170,
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "mousedown",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30
+                }
+            ],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  CUSTOM_ELEMENTS_SCHEMA,\n  Component,\n  HostBinding,\n  HostListener,\n  Input\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-chip',\n  standalone: true,\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  imports: [CommonModule],\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class AotwChipComponent {\n  @Input()\n  public active = false;\n\n  @HostBinding('class.disabled')\n  @Input()\n  public disabled = false;\n\n  @Input()\n  public size?: 'small' | 'medium';\n\n  @HostListener('mousedown', ['$event'])\n  public onMouseDown(event: MouseEvent): void {\n    // Prevents selection of neighbouring text when clicking multiple times\n    if (event.detail > 1) {\n      event.preventDefault();\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: inline-block;\n}\n\n:host(.disabled) {\n  pointer-events: none;\n}\n\naotw-chip {\n  width: 100%;\n}\n",
+                    "styleUrl": "./chip.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aotw-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n  <ng-content></ng-content>\n</aotw-chip>\n"
+        },
+        {
+            "name": "AotwChipGroupComponent",
+            "id": "component-AotwChipGroupComponent-5064fd1b239027c72034294fd9d19796d10d434c98c14f9e97829591e32b32d5390e03d5f6c59368481169f15ebd4a00efb88ad3edd46d2ff76cdb093009257d",
+            "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-chip-group",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./chip-group.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "chips",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "Chip[]",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "\"small\" | \"medium\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "activeChip",
+                    "defaultValue": "new EventEmitter<Chip>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "emitActiveChip",
+                    "args": [
+                        {
+                            "name": "chip",
+                            "type": "Chip",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "chip",
+                            "type": "Chip",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n  EventEmitter,\n  Input,\n  OnInit,\n  Output\n} from '@angular/core';\n\nimport { Chip } from '../chip';\n\n\n@Component({\n  selector: 'aotw-ng-chip-group',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './chip-group.component.html',\n})\nexport class AotwChipGroupComponent implements OnInit {\n  @Input()\n  public chips: Chip[] = [];\n\n  @Input()\n  public size: 'small' | 'medium' = 'medium';\n\n  @Output()\n  public activeChip = new EventEmitter<Chip>();\n\n  public ngOnInit(): void {\n    const activeChip = this.chips.find(chip => chip.active);\n    if (!activeChip) {\n      return;\n    }\n\n    this.emitActiveChip(activeChip);\n  }\n\n  public emitActiveChip(chip: Chip): void {\n    this.activeChip.emit(chip);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<aotw-chip-group>\n  <aotw-chip\n    *ngFor=\"let chip of chips\"\n    #chip\n    [size]=\"size\"\n    [active]=\"chip.active\"\n    [disabled]=\"chip.disabled\"\n    (click)=\"emitActiveChip(chip)\"\n  >\n    <ng-container *ngIf=\"chip.label\">\n      {{ chip.label }}\n    </ng-container>\n    <aotw-icon\n      *ngIf=\"chip.icon\"\n      [name]=\"chip.icon\"\n      [size]=\"size === 'medium' ? 'extra-large' : 'medium'\"\n    ></aotw-icon>\n  </aotw-chip>\n</aotw-chip-group>\n"
+        },
+        {
+            "name": "AotwDynamicTextComponent",
+            "id": "component-AotwDynamicTextComponent-be695d6583fdaab172a31328b3366e063fd45208ee4c900d081250bc041e4dfe5897c879ea04f9b628603e4c5630035affaffb2b652d6f18c2956b0470385684",
+            "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-dynamic-text",
+            "styleUrls": [
+                "./dynamic-text.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dynamic-text.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "alignment",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "\"left\" | \"right\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n  Input,\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-dynamic-text',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './dynamic-text.component.html',\n  styleUrls: ['./dynamic-text.component.scss'],\n})\nexport class AotwDynamicTextComponent {\n  @Input()\n  public alignment?: 'left' | 'right';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: contents;\n}\n",
+                    "styleUrl": "./dynamic-text.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aotw-dynamic-text [alignment]=\"alignment\">\n  <ng-content></ng-content>\n</aotw-dynamic-text>\n"
+        },
+        {
+            "name": "AotwFormFieldComponent",
+            "id": "component-AotwFormFieldComponent-5a26e572fba5965e11c8ebf48bdc42ea578c02deb29da5e892e8a801a54ca95f5a45d01321d8406c109e65eca660efc0173362902ba70d81c86ab7462e46ed50",
+            "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-form-field",
+            "styleUrls": [
+                "./form-field.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./form-field.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "message",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n  Input,\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-form-field',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './form-field.component.html',\n  styleUrls: ['./form-field.component.scss']\n})\nexport class AotwFormFieldComponent {\n  @Input()\n  public label?: string;\n\n  @Input()\n  public message?: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "aotw-message {\n  height: var(--aotw-size-xs);\n}\n",
+                    "styleUrl": "./form-field.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aotw-field>\n  <aotw-label *ngIf=\"label\">\n    {{ label }}\n  </aotw-label>\n  <ng-content></ng-content>\n  <aotw-message>\n    {{ message }}\n  </aotw-message>\n</aotw-field>\n"
+        },
+        {
+            "name": "AotwIconComponent",
+            "id": "component-AotwIconComponent-1bb884e7dd8cb340999c427a00822b653d7a6a2a948dcf68f9876ef84a6d351efa776c575de7d66532823b2d696e601fe5f9c21efc7f65ea47ebb0b60af955dd",
+            "file": "projects/aotw-ng-components/src/lib/components/icon/icon.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-icon",
+            "styleUrls": [
+                "./icon.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./icon.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'small'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  CUSTOM_ELEMENTS_SCHEMA,\n  ChangeDetectionStrategy,\n  Component,\n  Input,\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-icon',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './icon.component.html',\n  styleUrls: ['./icon.component.scss'],\n})\nexport class AotwIconComponent {\n  @Input()\n  public name?: string;\n\n  @Input()\n  public size = 'small';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: grid;\n}\n",
+                    "styleUrl": "./icon.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aotw-icon [name]=\"name\" [size]=\"size\"></aotw-icon>\n"
+        },
+        {
+            "name": "AotwLabelComponent",
+            "id": "component-AotwLabelComponent-95569ff2892735dc76f21a3fe083275d2854ef850e559d8680a448f696a89fb0bb64c5860d7509d352579c887a2edf6758812bff2ab9682c8f3adfdeae0e60bd",
+            "file": "projects/aotw-ng-components/src/lib/components/label/label.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-label",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./label.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-label',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './label.component.html',\n})\nexport class AotwLabelComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aotw-label>\n  <ng-content></ng-content>\n</aotw-label>\n"
+        },
+        {
+            "name": "AotwListItemComponent",
+            "id": "component-AotwListItemComponent-c98a9f94d8b42b0020fb2ef6721495134b588687d95063901a48175a38ae303e28bd0ed4d904a0e6ee43275aedac95bdb8231041624060b3fdb0341eaf891421",
+            "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-list-item",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./list-item.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "active",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n  Input,\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-list-item',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './list-item.component.html'\n})\nexport class AotwListItemComponent {\n  @Input()\n  public active = false;\n\n  @Input()\n  public disabled = false;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aotw-list-item [active]=\"active\" [disabled]=\"disabled\">\n  <ng-content></ng-content>\n</aotw-list-item>\n"
+        },
+        {
+            "name": "AotwSkeletonComponent",
+            "id": "component-AotwSkeletonComponent-bebe34d3a97b4cf3cea599ad711fc942d088e3f1f3159d3edc3dcd0091a7d61d54b288003b7523cd61afbf94dba3de181f7db44f9dce256510f9db487e5c9535",
+            "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-skeleton",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./skeleton.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "soft",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'aotw-ng-skeleton',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './skeleton.component.html',\n  styleUrl: './skeleton.component.scss',\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class AotwSkeletonComponent {\n  @HostBinding('class.soft')\n  @Input()\n  public soft = false;\n\n  @HostBinding('class.loading')\n  @Input()\n  public loading = false;\n}\n",
+            "styleUrl": "./skeleton.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": ""
+        },
+        {
+            "name": "AotwStepperComponent",
+            "id": "component-AotwStepperComponent-6744bde500d26c9b8dba8b66232a9441f55307a4525e217deecc3b1a01c762529fb5107446834ae9a04d48d313fc1ee60e057839f6d3a69a706c1465294e2c2a",
+            "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-stepper",
+            "styleUrls": [
+                "./stepper.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./stepper.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "activeStep",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "steps",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "Step[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "activeStepChange",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "cdr",
+                    "defaultValue": "inject(ChangeDetectorRef)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "stepperService",
+                    "defaultValue": "inject(AotwStepperService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 39,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "unsubscribe$",
+                    "defaultValue": "new Subject<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "setActiveStep",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  ChangeDetectorRef,\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n  EventEmitter,\n  inject,\n  Input,\n  OnDestroy,\n  OnInit,\n  Output\n} from '@angular/core';\nimport { Subject, takeUntil } from 'rxjs';\n\nimport { Step } from './stepper.model';\nimport { AotwStepperService } from './stepper.service';\n\n@Component({\n  selector: 'aotw-ng-stepper',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  templateUrl: './stepper.component.html',\n  styleUrls: ['./stepper.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class AotwStepperComponent implements OnDestroy, OnInit {\n  @Input()\n  public activeStep = 0;\n\n  @Input()\n  public steps: Step[] = [];\n\n  @Output()\n  public activeStepChange = new EventEmitter<number>();\n\n  private cdr = inject(ChangeDetectorRef);\n  private stepperService = inject(AotwStepperService);\n\n  private unsubscribe$ = new Subject<void>();\n\n  public ngOnInit(): void {\n    this.stepperService.steps$.pipe(\n      takeUntil(this.unsubscribe$)\n    ).subscribe(steps => {\n      this.steps = steps;\n      this.cdr.detectChanges();\n    });\n  }\n\n  public setActiveStep(index: number): void {\n    this.activeStep = index;\n    this.activeStepChange.emit(this.activeStep);\n  }\n\n  public ngOnDestroy(): void {\n    this.unsubscribe$.next();\n    this.unsubscribe$.complete();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "aotw-step {\n  cursor: pointer;\n}\n",
+                    "styleUrl": "./stepper.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnDestroy",
+                "OnInit"
+            ],
+            "templateData": "<aotw-stepper>\n  <aotw-step\n    *ngFor=\"let step of steps; let i = index\"\n    [active]=\"activeStep === i\"\n    [disabled]=\"step.disabled\"\n    (click)=\"setActiveStep(i)\"\n  >\n    {{ step.label }}\n  </aotw-step>\n</aotw-stepper>\n"
+        },
+        {
+            "name": "AotwTabGroupComponent",
+            "id": "component-AotwTabGroupComponent-c073607dfc73ed5ffb9f9efa276e10d8d8756690a1902810132df4dccbd1c8b00b626d7b2fc2c6a5b93a903989f7515d43ab9bd80ff916e810989248cd79dc69",
+            "file": "projects/aotw-ng-components/src/lib/components/tab-group/tab-group.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-tab-group",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tab-group.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "activeTab",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "tabs",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "Tab[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "selectedTab",
+                    "defaultValue": "new EventEmitter<Tab>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "setActiveTab",
+                    "args": [
+                        {
+                            "name": "activeTab",
+                            "type": "Tab",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "activeTab",
+                            "type": "Tab",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\n\nimport { Tab } from './tab-group.model';\n\n@Component({\n  selector: 'aotw-ng-tab-group',\n  standalone: true,\n  imports: [CommonModule],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './tab-group.component.html',\n})\nexport class AotwTabGroupComponent {\n  @Input()\n  public activeTab = 0;\n\n  @Input()\n  public tabs: Tab[] = [];\n\n  @Output()\n  public selectedTab = new EventEmitter<Tab>();\n\n  public setActiveTab(activeTab: Tab): void {\n    this.activeTab = activeTab.id;\n    this.selectedTab.emit(activeTab);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aotw-tab-group [activeTab]=\"activeTab\">\n  <aotw-tab\n    *ngFor=\"let tab of tabs\"\n    [disabled]=\"tab.disabled\"\n    (click)=\"setActiveTab(tab)\"\n  >\n    {{ tab.label }}\n  </aotw-tab>\n</aotw-tab-group>\n"
+        },
+        {
+            "name": "AotwYearPickerComponent",
+            "id": "component-AotwYearPickerComponent-31b12ac6fc1d1ffb8b7632951d55241698b2b0fbe678bffe30e0efa702b505c10dd6886b7dbf8fe41b0ab7111e5f285ff00c91fd02e68d8d3134366685a9826b",
+            "file": "projects/aotw-ng-components/src/lib/components/year-picker/year-picker.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-year-picker",
+            "styleUrls": [
+                "./year-picker.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./year-picker.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "max",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "min",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "rangeSize",
+                    "defaultValue": "9",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "selected",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "selectedChange",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 42,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "activeRange",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[number, number]",
+                    "optional": false,
+                    "description": "",
+                    "line": 44,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "next",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 61,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "previous",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "setYear",
+                    "args": [
+                        {
+                            "name": "year",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 68,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "year",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "AotwChipComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "AotwIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "RangePipe",
+                    "type": "pipe"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  OnInit,\n  Output\n} from '@angular/core';\n\nimport { RangePipe } from '../../pipes';\nimport { AotwChipComponent } from '../chip';\nimport { AotwIconComponent } from '../icon';\n\n@Component({\n  selector: 'aotw-ng-year-picker',\n  standalone: true,\n  imports: [\n    CommonModule,\n    AotwChipComponent,\n    AotwIconComponent,\n    RangePipe\n  ],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './year-picker.component.html',\n  styleUrls: ['./year-picker.component.scss']\n})\nexport class AotwYearPickerComponent implements OnInit {\n  @Input()\n  public min = 0;\n\n  @Input()\n  public max = 0;\n\n  @Input()\n  public rangeSize = 9;\n\n  @Input()\n  public selected = 0;\n\n  @Output()\n  public selectedChange = new EventEmitter<number>();\n\n  public activeRange!: [number, number];\n\n  public ngOnInit(): void {\n    const difference = this.max - this.selected;\n    const multiplier = Math.floor(difference / this.rangeSize);\n    const range = this.rangeSize * multiplier;\n    const minValue = this.max + 1 - this.rangeSize - range;\n    this.activeRange = [minValue < this.min ? this.min : minValue, this.max - range];\n  }\n\n  public previous(): void {\n    const minValue = this.activeRange[0] - this.rangeSize;\n    this.activeRange = [\n      minValue < this.min ? this.min : minValue, this.activeRange[0] - 1\n    ];\n  }\n\n  public next(): void {\n    const maxValue = this.activeRange[1] + this.rangeSize;\n    this.activeRange = [\n      this.activeRange[1] + 1, maxValue > this.max ? this.max : maxValue\n    ];\n  }\n\n  public setYear(year: number): void {\n    this.selected = year;\n    this.selectedChange.emit(this.selected);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  background-color: var(--aotw-color-grey-100);\n  border-radius: var(--aotw-radius-s);\n  box-shadow: var(--aotw-elevation-xs);\n  box-sizing: border-box;\n  display: grid;\n  gap: var(--aotw-space-xs);\n  grid-template-rows: auto 1fr auto;\n  min-width: 6rem;\n  padding: var(--aotw-space-s);\n}\n\nul {\n  display: grid;\n  gap: var(--aotw-space-xs);\n  grid-template-columns: repeat(3, 1fr);\n  list-style: none;\n  margin: 0;\n  padding: 0;\n\n  li {\n    aotw-ng-chip {\n      display: block;\n      width: var(--aotw-size-xl);\n    }\n  }\n}\n",
+                    "styleUrl": "./year-picker.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<aotw-ng-chip [disabled]=\"min === activeRange[0]\" (click)=\"previous()\">\n  <aotw-ng-icon name=\"chevron-up\" size=\"medium\"></aotw-ng-icon>\n</aotw-ng-chip>\n<ul>\n  <li *ngFor=\"let year of activeRange | range\">\n    <aotw-ng-chip size=\"medium\" [active]=\"year === selected\" (click)=\"setYear(year)\">\n      {{ year }}\n    </aotw-ng-chip>\n  </li>\n</ul>\n<aotw-ng-chip [disabled]=\"max === activeRange[1]\" (click)=\"next()\">\n  <aotw-ng-icon name=\"chevron-down\" size=\"medium\"></aotw-ng-icon>\n</aotw-ng-chip>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Active",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    active: true\n  }\n}"
+            },
+            {
+                "name": "Active",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    active: true\n  }\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ChipArgs",
+                "defaultValue": "{\n  active: false,\n  disabled: false,\n  icon: 'check',\n  label: 'Chip',\n  size: 'small',\n  onMouseDown: () => {}\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ChipGroupArgs",
+                "defaultValue": "{\n  chips: [\n    { id: '1', active: false, disabled: false, label: 'Chip 1' },\n    { id: '2', active: false, disabled: false, label: 'Chip 2' }\n  ],\n  size: 'small'\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "DynamicTextArgs",
+                "defaultValue": "{\n  alignment: 'left',\n  text: 'Dynamic Text'\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "FormFieldArgs",
+                "defaultValue": "{\n  inputType: 'text',\n  label: 'Form Field'\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ListItemArgs",
+                "defaultValue": "{\n  active: false,\n  disabled: false,\n  label: 'List Item',\n  prefix: '',\n  suffix: ''\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StepperArgs",
+                "defaultValue": "{\n  activeStep: 0,\n  steps: [\n    { disabled: false, label: 'Step 1' },\n    { disabled: false, label: 'Step 2' },\n    { disabled: true, label: 'Step 3' },\n  ]\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "SkeletonArgs",
+                "defaultValue": "{\n  loading: true,\n  soft: false\n}"
+            },
+            {
+                "name": "Checkboxes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    inputType: 'checkbox'\n  }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    disabled: true\n  }\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    disabled: true\n  }\n}"
+            },
+            {
+                "name": "MediumIcons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    chips: [\n      { id: '1', active: false, disabled: false, label: '', icon: 'list' },\n      { id: '2', active: true, disabled: false, label: '', icon: 'grid' }\n    ] as Chip[],\n    size: 'medium'\n  }\n}"
+            },
+            {
+                "name": "MediumSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    icon: 'logo',\n    label: '',\n    size: 'medium'\n  }\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ChipArgs>",
+                "defaultValue": "{\n  title: 'Components/Chip',\n  component: AotwChipComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipComponent, AotwIconComponent, CommonModule]\n    })\n  ],\n  render: ({ icon, label, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n        <aotw-ng-icon\n          *ngIf=${icon.length}\n          name=${icon}\n          [size]=\"size\"\n        ></aotw-ng-icon>\n        ${label}\n      </aotw-ng-chip>\n    `\n  }),\n  argTypes: {\n    icon: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    label: {\n      control: 'text'\n    }\n  }\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ChipGroupArgs>",
+                "defaultValue": "{\n  title: 'Components/Chip Group',\n  component: AotwChipGroupComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipGroupComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DynamicTextArgs>",
+                "defaultValue": "{\n  title: 'Components/Dynamic Text',\n  component: AotwDynamicTextComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwDynamicTextComponent, CommonModule]\n    }),\n    componentWrapperDecorator(story => `\n      <div style=\"display: grid; height: 2rem; width: 6rem\">\n        ${story}\n      </div>\n    `)\n  ],\n  render: ({ text, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-dynamic-text>\n        ${text}\n      </aotw-ng-dynamic-text>\n    `\n  }),\n  argTypes: {}\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<FormFieldArgs>",
+                "defaultValue": "{\n  title: 'Components/Form Field',\n  component: AotwFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwFormFieldComponent, CommonModule]\n    })\n  ],\n  render: ({ inputType, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-form-field [label]=\"label\" [message]=\"message\">\n        <input *ngIf=${inputType === 'text'} />\n        <ng-container *ngIf=${inputType === 'checkbox'}>\n          <input id=\"checkOne\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkOne\">Option 1</label>\n          <input id=\"checkTwo\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkTwo\">Option 2</label>\n        </ng-container>\n        <ng-container *ngIf=${inputType === 'radio'}>\n          <input id=\"radioOne\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioOne\">Option 1</label>\n          <input id=\"radioTwo\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioTwo\">Option 2</label>\n        </ng-container>\n      </aotw-ng-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['checkbox', 'radio', 'text']\n    },\n    label: {\n      control: 'text'\n    },\n    message: {\n      control: 'text'\n    }\n  }\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ListItemArgs>",
+                "defaultValue": "{\n  title: 'Components/List Item',\n  component: AotwListItemComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwIconComponent, AotwListItemComponent, CommonModule]\n    })\n  ],\n  render: ({label, prefix, suffix, ...args}) => ({\n    props: args,\n    template: `\n      <aotw-ng-list-item [active]=\"active\" [disabled]=\"disabled\">\n        <aotw-ng-icon\n          *ngIf=\"${prefix.length}\"\n          name=\"${prefix}\"\n          prefix\n        ></aotw-ng-icon>\n        ${label}\n        <aotw-ng-icon\n          *ngIf=\"${suffix.length}\"\n          name=\"${suffix}\"\n          suffix\n        ></aotw-ng-icon>\n      </aotw-ng-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    prefix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    suffix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    }\n  }\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<StepperArgs>",
+                "defaultValue": "{\n  title: 'Components/Stepper',\n  component: AotwStepperComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwStepperComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SkeletonArgs>",
+                "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: AotwSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwSkeletonComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args,\n    template: `\n      <aotw-ng-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `\n  }),\n  argTypes: {}\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: 'var(--aotw-color-grey-200)'\n        },\n        {\n          name: 'primary',\n          value: 'var(--aotw-color-primary-500)'\n        },\n        {\n          name: 'dark',\n          value: 'var(--aotw-color-grey-700)'\n        }\n      ]\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "RadioButtons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    inputType: 'radio'\n  }\n}"
+            },
+            {
+                "name": "Soft",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { ...args, soft: true }\n}"
+            },
+            {
+                "name": "Static",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { ...args, loading: false }\n}"
+            },
+            {
+                "name": "WithAffixes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    prefix: 'check',\n    suffix: 'ellipsis'\n  }\n}"
+            },
+            {
+                "name": "WithMessage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...args,\n    message: 'Message'\n  }\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "ChipArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ChipGroupArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "Pick<AotwChipGroupComponent | \"chips\" | \"size\">",
+                "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "DynamicTextArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "FormFieldArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ListItemArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "SkeletonArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "AotwSkeletonComponent",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "StepperArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "Pick<AotwStepperComponent | \"activeStep\" | \"steps\">",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ChipArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ChipGroupArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<DynamicTextArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<FormFieldArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ListItemArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<StepperArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SkeletonArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts": [
+                {
+                    "name": "Active",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    active: true\n  }\n}"
+                },
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChipArgs",
+                    "defaultValue": "{\n  active: false,\n  disabled: false,\n  icon: 'check',\n  label: 'Chip',\n  size: 'small',\n  onMouseDown: () => {}\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    disabled: true\n  }\n}"
+                },
+                {
+                    "name": "MediumSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    icon: 'logo',\n    label: '',\n    size: 'medium'\n  }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ChipArgs>",
+                    "defaultValue": "{\n  title: 'Components/Chip',\n  component: AotwChipComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipComponent, AotwIconComponent, CommonModule]\n    })\n  ],\n  render: ({ icon, label, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n        <aotw-ng-icon\n          *ngIf=${icon.length}\n          name=${icon}\n          [size]=\"size\"\n        ></aotw-ng-icon>\n        ${label}\n      </aotw-ng-chip>\n    `\n  }),\n  argTypes: {\n    icon: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    label: {\n      control: 'text'\n    }\n  }\n}"
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts": [
+                {
+                    "name": "Active",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    active: true\n  }\n}"
+                },
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ListItemArgs",
+                    "defaultValue": "{\n  active: false,\n  disabled: false,\n  label: 'List Item',\n  prefix: '',\n  suffix: ''\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    disabled: true\n  }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ListItemArgs>",
+                    "defaultValue": "{\n  title: 'Components/List Item',\n  component: AotwListItemComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwIconComponent, AotwListItemComponent, CommonModule]\n    })\n  ],\n  render: ({label, prefix, suffix, ...args}) => ({\n    props: args,\n    template: `\n      <aotw-ng-list-item [active]=\"active\" [disabled]=\"disabled\">\n        <aotw-ng-icon\n          *ngIf=\"${prefix.length}\"\n          name=\"${prefix}\"\n          prefix\n        ></aotw-ng-icon>\n        ${label}\n        <aotw-ng-icon\n          *ngIf=\"${suffix.length}\"\n          name=\"${suffix}\"\n          suffix\n        ></aotw-ng-icon>\n      </aotw-ng-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    prefix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    suffix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    }\n  }\n}"
+                },
+                {
+                    "name": "WithAffixes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    prefix: 'check',\n    suffix: 'ellipsis'\n  }\n}"
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChipGroupArgs",
+                    "defaultValue": "{\n  chips: [\n    { id: '1', active: false, disabled: false, label: 'Chip 1' },\n    { id: '2', active: false, disabled: false, label: 'Chip 2' }\n  ],\n  size: 'small'\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "MediumIcons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    chips: [\n      { id: '1', active: false, disabled: false, label: '', icon: 'list' },\n      { id: '2', active: true, disabled: false, label: '', icon: 'grid' }\n    ] as Chip[],\n    size: 'medium'\n  }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ChipGroupArgs>",
+                    "defaultValue": "{\n  title: 'Components/Chip Group',\n  component: AotwChipGroupComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipGroupComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DynamicTextArgs",
+                    "defaultValue": "{\n  alignment: 'left',\n  text: 'Dynamic Text'\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DynamicTextArgs>",
+                    "defaultValue": "{\n  title: 'Components/Dynamic Text',\n  component: AotwDynamicTextComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwDynamicTextComponent, CommonModule]\n    }),\n    componentWrapperDecorator(story => `\n      <div style=\"display: grid; height: 2rem; width: 6rem\">\n        ${story}\n      </div>\n    `)\n  ],\n  render: ({ text, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-dynamic-text>\n        ${text}\n      </aotw-ng-dynamic-text>\n    `\n  }),\n  argTypes: {}\n}"
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormFieldArgs",
+                    "defaultValue": "{\n  inputType: 'text',\n  label: 'Form Field'\n}"
+                },
+                {
+                    "name": "Checkboxes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    inputType: 'checkbox'\n  }\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FormFieldArgs>",
+                    "defaultValue": "{\n  title: 'Components/Form Field',\n  component: AotwFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwFormFieldComponent, CommonModule]\n    })\n  ],\n  render: ({ inputType, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-form-field [label]=\"label\" [message]=\"message\">\n        <input *ngIf=${inputType === 'text'} />\n        <ng-container *ngIf=${inputType === 'checkbox'}>\n          <input id=\"checkOne\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkOne\">Option 1</label>\n          <input id=\"checkTwo\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkTwo\">Option 2</label>\n        </ng-container>\n        <ng-container *ngIf=${inputType === 'radio'}>\n          <input id=\"radioOne\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioOne\">Option 1</label>\n          <input id=\"radioTwo\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioTwo\">Option 2</label>\n        </ng-container>\n      </aotw-ng-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['checkbox', 'radio', 'text']\n    },\n    label: {\n      control: 'text'\n    },\n    message: {\n      control: 'text'\n    }\n  }\n}"
+                },
+                {
+                    "name": "RadioButtons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    inputType: 'radio'\n  }\n}"
+                },
+                {
+                    "name": "WithMessage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...args,\n    message: 'Message'\n  }\n}"
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StepperArgs",
+                    "defaultValue": "{\n  activeStep: 0,\n  steps: [\n    { disabled: false, label: 'Step 1' },\n    { disabled: false, label: 'Step 2' },\n    { disabled: true, label: 'Step 3' },\n  ]\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<StepperArgs>",
+                    "defaultValue": "{\n  title: 'Components/Stepper',\n  component: AotwStepperComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwStepperComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SkeletonArgs",
+                    "defaultValue": "{\n  loading: true,\n  soft: false\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SkeletonArgs>",
+                    "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: AotwSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwSkeletonComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args,\n    template: `\n      <aotw-ng-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `\n  }),\n  argTypes: {}\n}"
+                },
+                {
+                    "name": "Soft",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { ...args, soft: true }\n}"
+                },
+                {
+                    "name": "Static",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { ...args, loading: false }\n}"
+                }
+            ],
+            "projects/aotw-ng-components/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: 'var(--aotw-color-grey-200)'\n        },\n        {\n          name: 'primary',\n          value: 'var(--aotw-color-primary-500)'\n        },\n        {\n          name: 'dark',\n          value: 'var(--aotw-color-grey-700)'\n        }\n      ]\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts": [
+                {
+                    "name": "ChipArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ChipArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts": [
+                {
+                    "name": "ChipGroupArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "Pick<AotwChipGroupComponent | \"chips\" | \"size\">",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ChipGroupArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts": [
+                {
+                    "name": "DynamicTextArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DynamicTextArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts": [
+                {
+                    "name": "FormFieldArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FormFieldArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts": [
+                {
+                    "name": "ListItemArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ListItemArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts": [
+                {
+                    "name": "SkeletonArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "AotwSkeletonComponent",
+                    "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SkeletonArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts": [
+                {
+                    "name": "StepperArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "Pick<AotwStepperComponent | \"activeStep\" | \"steps\">",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<StepperArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/aotw-ng-components/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwChipGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MediumIcons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwChipComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Chip",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Active",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MediumSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwDynamicTextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/dynamic-text/dynamic-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/form-field/form-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwFormFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Checkboxes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RadioButtons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/form-field/form-field.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithMessage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/icon/icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwIconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/label/label.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwLabelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/list-item/list-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwListItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Active",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithAffixes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwSkeletonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Soft",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Static",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/stepper/stepper.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwStepperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/stepper/stepper.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Step",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/stepper/stepper.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "AotwStepperService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/tab-group/tab-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwTabGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/tab-group/tab-group.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Tab",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/year-picker/year-picker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwYearPickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/directives/dropdown.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "AotwDropdownDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/pipes/range.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "RangePipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
