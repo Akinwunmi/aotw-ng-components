@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aotw-lib-ng": {
+    "aotw-ng-components": {
       "projectType": "library",
-      "root": "projects/aotw-lib-ng",
-      "sourceRoot": "projects/aotw-lib-ng/src",
+      "root": "projects/aotw-ng-components",
+      "sourceRoot": "projects/aotw-ng-components/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/aotw-lib-ng/ng-package.json"
+            "project": "projects/aotw-ng-components/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/aotw-lib-ng/tsconfig.lib.prod.json"
+              "tsConfig": "projects/aotw-ng-components/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/aotw-lib-ng/tsconfig.lib.json"
+              "tsConfig": "projects/aotw-ng-components/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/aotw-lib-ng/tsconfig.spec.json",
+            "tsConfig": "projects/aotw-ng-components/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -37,17 +37,18 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "projects/aotw-lib-ng/.storybook",
-            "browserTarget": "aotw-lib-ng:build",
+            "configDir": "projects/aotw-ng-components/.storybook",
+            "browserTarget": "aotw-ng-components:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",
               "json",
               "-d",
-              "projects/aotw-lib-ng"
+              "projects/aotw-ng-components"
             ],
             "styles": [
-              "node_modules/@aotw/core/dist/style.css"
+              "node_modules/@aotw/core/dist/style.css",
+              "projects/aotw-ng-components/src/stories/assets/styles.scss"
             ],
             "port": 6006
           }
@@ -55,14 +56,14 @@
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "configDir": "projects/aotw-lib-ng/.storybook",
-            "browserTarget": "aotw-lib-ng:build",
+            "configDir": "projects/aotw-ng-components/.storybook",
+            "browserTarget": "aotw-ng-components:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",
               "json",
               "-d",
-              "projects/aotw-lib-ng"
+              "projects/aotw-ng-components"
             ],
             "outputDir": "storybook-static"
           }

@@ -1,0 +1,21 @@
+<aotw-chip-group>
+  @for (chip of chips; track $index) {
+    <aotw-chip
+      #chip
+      [size]="size"
+      [active]="chip.active"
+      [disabled]="chip.disabled"
+      (click)="emitActiveChip(chip)"
+    >
+      @if (chip.label) {
+        {{ chip.label }}
+      }
+      @if (chip.icon) {
+        <aotw-icon
+          [name]="chip.icon"
+          [size]="size === 'medium' ? 'extra-large' : 'medium'"
+        />
+      }
+    </aotw-chip>
+  }
+</aotw-chip-group>

@@ -1,0 +1,7 @@
+<aotw-tab-group [activeTab]="activeTab">
+  @for (tab of tabs; track $index) {
+    <aotw-tab [disabled]="tab.disabled" (click)="setActiveTab(tab)">
+      {{ tab.label }}
+    </aotw-tab>
+  }
+</aotw-tab-group>

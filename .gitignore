@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Library
-/projects/aotw-lib-ng/node_modules
+/projects/aotw-ng-components/node_modules
