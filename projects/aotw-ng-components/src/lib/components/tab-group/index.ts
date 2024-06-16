@@ -1,2 +1,2 @@
 export * from './tab-group.component';
-export * from './tab-group.model';
+export * from '../tab/tab.model';

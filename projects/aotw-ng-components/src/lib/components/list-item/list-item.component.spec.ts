@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AotwListItemComponent } from './list-item.component';
+import { FlagListItemComponent } from './list-item.component';
 
-describe('AotwListItemComponent', () => {
-  let component: AotwListItemComponent;
-  let fixture: ComponentFixture<AotwListItemComponent>;
+describe('FlagListItemComponent', () => {
+  let component: FlagListItemComponent;
+  let fixture: ComponentFixture<FlagListItemComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AotwListItemComponent]
+      imports: [FlagListItemComponent]
     });
-    fixture = TestBed.createComponent(AotwListItemComponent);
+    fixture = TestBed.createComponent(FlagListItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

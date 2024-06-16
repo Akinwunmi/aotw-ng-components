@@ -1,15 +1,13 @@
-<aotw-ng-chip [disabled]="min === activeRange[0]" (click)="previous()">
-  <aotw-ng-icon name="chevron-up" size="medium" />
-</aotw-ng-chip>
-<ul>
+<button flagButton [disabled]="min === activeRange[0]" (click)="previous()">
+  <flag-icon name="chevron-up" />
+</button>
+<div class="years">
   @for (year of activeRange | range; track $index) {
-    <li>
-      <aotw-ng-chip size="medium" [active]="year === selected" (click)="setYear(year)">
-        {{ year }}
-      </aotw-ng-chip>
-    </li>
+    <button flagButton [attr.raised]="year === selected || undefined" (click)="setYear(year)">
+      {{ year }}
+    </button>
   }
-</ul>
-<aotw-ng-chip [disabled]="max === activeRange[1]" (click)="next()">
-  <aotw-ng-icon name="chevron-down" size="medium" />
-</aotw-ng-chip>
+</div>
+<button flagButton [disabled]="max === activeRange[1]" (click)="next()">
+  <flag-icon name="chevron-down" />
+</button>

@@ -1,27 +1,17 @@
 :host {
-  background-color: var(--aotw-color-grey-100);
-  border-radius: var(--aotw-radius-s);
-  box-shadow: var(--aotw-elevation-xs);
+  background-color: var(--flag-color-grey-100);
+  border-radius: var(--flag-radius-sm);
+  box-shadow: var(--flag-elevation-xs);
   box-sizing: border-box;
   display: grid;
-  gap: var(--aotw-space-xs);
+  gap: var(--flag-space-sm);
   grid-template-rows: auto 1fr auto;
-  min-width: 6rem;
-  padding: var(--aotw-space-s);
+  width: max-content;
+  padding: var(--flag-space-sm);
 }
 
-ul {
+.years {
   display: grid;
-  gap: var(--aotw-space-xs);
+  gap: var(--flag-space-sm);
   grid-template-columns: repeat(3, 1fr);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    aotw-ng-chip {
-      display: block;
-      width: var(--aotw-size-xl);
-    }
-  }
 }

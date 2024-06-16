@@ -1,61 +1,42 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  EventEmitter,
-  inject,
-  Input,
-  OnDestroy,
+  DestroyRef,
   OnInit,
-  Output
+  inject,
+  model,
 } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Step } from './stepper.model';
-import { AotwStepperService } from './stepper.service';
+import { FlagStepperService } from './stepper.service';
 
 @Component({
-  selector: 'aotw-ng-stepper',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'flag-stepper',
   standalone: true,
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './stepper.component.html',
 })
-export class AotwStepperComponent implements OnDestroy, OnInit {
-  @Input()
-  public activeStep = 0;
-
-  @Input()
-  public steps: Step[] = [];
-
-  @Output()
-  public activeStepChange = new EventEmitter<number>();
-
+export class FlagStepperComponent implements OnInit {
   private cdr = inject(ChangeDetectorRef);
-  private stepperService = inject(AotwStepperService);
+  private destroyRef = inject(DestroyRef);
+  private stepperService = inject(FlagStepperService);
 
-  private unsubscribe$ = new Subject<void>();
+  public steps = model.required<Step[]>();  
+  public activeStep = model(0);
 
   public ngOnInit(): void {
     this.stepperService.steps$.pipe(
-      takeUntil(this.unsubscribe$)
+      takeUntilDestroyed(this.destroyRef)
     ).subscribe(steps => {
-      this.steps = steps;
+      this.steps.set(steps);
       this.cdr.detectChanges();
     });
   }
 
   public setActiveStep(index: number): void {
-    this.activeStep = index;
-    this.activeStepChange.emit(this.activeStep);
-  }
-
-  public ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+    this.activeStep.set(index);
   }
 }

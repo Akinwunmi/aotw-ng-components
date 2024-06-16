@@ -1,0 +1,105 @@
+button[flagButton] {
+  align-items: center;
+  background-color: var(--flag-color-white);
+  border: none;
+  border-radius: var(--flag-radius-sm);
+  color: var(--flag-color-primary-500);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--flag-font-family-primary);
+  font-size: var(--flag-font-size-sm);
+  font-weight: var(--flag-font-weight-regular);
+  gap: var(--flag-space-sm);
+  height: var(--flag-size-lg);
+  justify-content: center;
+  line-height: inherit;
+  overflow: hidden;
+  padding-inline: var(--flag-space-md);
+  position: relative;
+  transition: background-color 150ms ease-in-out;
+  transition-property: background-color, color;
+
+  &:hover {
+    background-color: var(--flag-color-primary-100);
+    color: var(--flag-color-primary-600);
+  }
+
+  &:active {
+    background-color: var(--flag-color-primary-200);
+    color: var(--flag-color-primary-700);
+  }
+
+  &[secondary] {
+    background-color: var(--flag-color-secondary-100);
+    color: var(--flag-color-secondary-700);
+
+    &:hover {
+      background-color: var(--flag-color-secondary-200);
+    }
+
+    &:active {
+      background-color: var(--flag-color-secondary-300);
+    }
+  }
+
+  &[ghost] {
+    background-color: transparent;
+    color: var(--flag-color-primary-500);
+
+    &:hover {
+      background-color: var(--flag-color-primary-100);
+    }
+
+    &:active {
+      background-color: var(--flag-color-primary-200);
+    }
+
+    &[secondary] {
+      color: var(--flag-color-secondary-700);
+
+      &:hover {
+        background-color: var(--flag-color-secondary-200);
+      }
+  
+      &:active {
+        background-color: var(--flag-color-secondary-300);
+      }
+    }
+  }
+
+  &[raised] {
+    background-color: var(--flag-color-primary-500);
+    color: var(--flag-color-white);
+
+    &:hover {
+      background-color: var(--flag-color-primary-600);
+    }
+
+    &:active {
+      background-color: var(--flag-color-primary-700);
+    }
+
+    &[secondary] {
+      background-color: var(--flag-color-secondary-500);
+      color: var(--flag-color-white);
+
+      &:hover {
+        background-color: var(--flag-color-secondary-600);
+      }
+
+      &:active {
+        background-color: var(--flag-color-secondary-700);
+      }
+    }
+  }
+
+  &[rounded] {
+    border-radius: calc(var(--flag-size-lg) / 2);
+  }
+
+  &[disabled] {
+    background-color: var(--flag-color-grey-300);
+    color: var(--flag-color-grey-500);
+    pointer-events: none;
+  }
+}

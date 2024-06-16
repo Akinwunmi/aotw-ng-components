@@ -1,12 +1,12 @@
 :host {
-  background-color: var(--aotw-color-grey-300);
+  background-color: var(--flag-color-grey-300);
   display: block;
   height: 100%;
   width: 100%;
 }
 
 :host(.soft) {
-  border-radius: var(--aotw-radius-s);
+  border-radius: var(--flag-radius-sm);
 }
 
 :host(.loading) {
@@ -15,9 +15,9 @@
 
 @keyframes pulsate {
   from {
-    background-color: var(--aotw-color-grey-200);
+    background-color: var(--flag-color-grey-200);
   }
   to {
-    background-color: var(--aotw-color-grey-300);
+    background-color: var(--flag-color-grey-300);
   }
 }

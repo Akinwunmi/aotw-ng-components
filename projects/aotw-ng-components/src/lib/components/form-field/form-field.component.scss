@@ -1,3 +1,4 @@
-aotw-message {
-  height: var(--aotw-size-xs);
+:host {
+  display: grid;
+  gap: var(--flag-space-sm);
 }

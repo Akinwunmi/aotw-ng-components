@@ -9,16 +9,14 @@ import {
 } from '@angular/core';
 
 import { RangePipe } from '../../pipes';
-import { AotwChipComponent } from '../chip';
-import { AotwIconComponent } from '../icon';
+import { FlagIconComponent } from '../icon';
 
 @Component({
-  selector: 'aotw-ng-year-picker',
+  selector: 'flag-year-picker',
   standalone: true,
   imports: [
     CommonModule,
-    AotwChipComponent,
-    AotwIconComponent,
+    FlagIconComponent,
     RangePipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,7 +1,6 @@
-<aotw-tab-group [activeTab]="activeTab">
-  @for (tab of tabs; track $index) {
-    <aotw-tab [disabled]="tab.disabled" (click)="setActiveTab(tab)">
-      {{ tab.label }}
-    </aotw-tab>
-  }
-</aotw-tab-group>
+@for (tab of tabs(); track $index) {
+  <flag-tab [disabled]="tab.disabled" (click)="setActive(tab.id)">
+    {{ tab.label }}
+  </flag-tab>
+}
+<div class="line" [ngStyle]="{ left: linePosition(), width: lineWidth() }"></div>

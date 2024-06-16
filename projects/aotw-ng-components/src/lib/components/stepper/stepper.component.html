@@ -1,11 +1,11 @@
-<aotw-stepper>
-  @for (step of steps; let i = $index; track i) {
-    <aotw-step
-      [active]="activeStep === i"
-      [disabled]="step.disabled"
-      (click)="setActiveStep(i)"
-    >
-      {{ step.label }}
-    </aotw-step>
-  }
-</aotw-stepper>
+@for (step of steps(); track i; let i = $index) {
+  <button
+    flagButton
+    [attr.ghost]="activeStep() !== i || undefined"
+    [attr.raised]="activeStep() === i || undefined"
+    [disabled]="step.disabled"
+    (click)="setActiveStep(i)"
+  >
+    {{ step.label }}
+  </button>
+}

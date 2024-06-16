@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
-import '@aotw/components';
-import icons from '@aotw/core/dist/icons/icons.json';
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 
-import { AotwIconComponent } from '../icon';
+import { FlagIconComponent, IconService, MockIconService, ICONS } from '../icon';
 
-import { AotwListItemComponent } from './list-item.component';
+import { FlagListItemComponent } from './list-item.component';
 
-type ListItemArgs = AotwListItemComponent & {
+type ListItemArgs = {
+  active?: boolean;
+  disabled?: boolean;
+  interactive?: boolean;
   label: string;
   prefix: string;
   suffix: string;
@@ -16,6 +16,7 @@ type ListItemArgs = AotwListItemComponent & {
 const args: ListItemArgs = {
   active: false,
   disabled: false,
+  interactive: true,
   label: 'List Item',
   prefix: '',
   suffix: ''
@@ -23,25 +24,27 @@ const args: ListItemArgs = {
 
 const meta: Meta<ListItemArgs> = {
   title: 'Components/List Item',
-  component: AotwListItemComponent,
+  component: FlagListItemComponent,
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [AotwIconComponent, AotwListItemComponent, CommonModule]
+      imports: [FlagIconComponent, FlagListItemComponent],
+      providers: [
+        {
+          provide: IconService,
+          useClass: MockIconService,
+        },
+      ],
     })
   ],
   render: ({label, prefix, suffix, ...args}) => ({
     props: args,
     template: `
-      <aotw-ng-list-item [active]="active" [disabled]="disabled">
-        @if (${prefix.length}) {
-          <aotw-ng-icon name="${prefix}" prefix />
-        }
+      <flag-list-item [active]="active" [disabled]="disabled" [interactive]="interactive">
+        ${prefix ? `<flag-icon name="${prefix}" />` : ''}
         ${label}
-        @if (${suffix.length}) {
-          <aotw-ng-icon name="${suffix}" suffix />
-        }
-      </aotw-ng-list-item>
+        ${suffix ? `<flag-icon name="${suffix}" />` : ''}
+      </flag-list-item>
     `
   }),
   argTypes: {
@@ -51,11 +54,11 @@ const meta: Meta<ListItemArgs> = {
     },
     prefix: {
       control: 'select',
-      options: icons.map(icon => icon.name)
+      options: ICONS.map(icon => icon.name)
     },
     suffix: {
       control: 'select',
-      options: icons.map(icon => icon.name)
+      options: ICONS.map(icon => icon.name)
     }
   }
 };
@@ -76,7 +79,14 @@ export const WithAffixes: Story = {
   args: {
     ...args,
     prefix: 'check',
-    suffix: 'ellipsis'
+    suffix: 'arrow-right'
+  }
+};
+
+export const NotInteractive: Story = {
+  args: {
+    ...args,
+    interactive: false
   }
 };
 

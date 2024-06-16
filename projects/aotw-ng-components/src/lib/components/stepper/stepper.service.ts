@@ -6,7 +6,7 @@ import { Step } from './stepper.model';
 @Injectable({
   providedIn: 'root'
 })
-export class AotwStepperService {
+export class FlagStepperService {
   public steps$ = new Subject<Step[]>();
 
   public setSteps(steps: Step[]): void {

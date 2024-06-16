@@ -1,24 +1,31 @@
-import { CommonModule } from '@angular/common';
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
   Component,
-  Input,
+  effect,
+  ElementRef,
+  inject,
+  input,
 } from '@angular/core';
 
-@Component({
-  selector: 'aotw-ng-icon',
-  standalone: true,
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.scss'],
-})
-export class AotwIconComponent {
-  @Input()
-  public name?: string;
+import { IconService } from './icon.service';
 
-  @Input()
-  public size = 'small';
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'flag-icon',
+  standalone: true,
+  styleUrl: './icon.component.scss',
+  template: '',
+})
+export class FlagIconComponent {
+  private readonly elementRef = inject(ElementRef);
+  private readonly iconService = inject(IconService);
+
+  public name = input.required<string>();
+  
+  public constructor() {
+    effect(() => {
+      const icon = this.iconService.getIcon(this.name());
+      this.elementRef.nativeElement.innerHTML = icon.data;
+    });
+  }
 }

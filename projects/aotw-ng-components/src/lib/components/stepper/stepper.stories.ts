@@ -1,10 +1,12 @@
-import { CommonModule } from '@angular/common';
-import '@aotw/components';
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 
-import { AotwStepperComponent } from './stepper.component';
+import { FlagStepperComponent } from './stepper.component';
+import { Step } from './stepper.model';
 
-type StepperArgs = Pick<AotwStepperComponent, 'activeStep' | 'steps'>;
+type StepperArgs = {
+  activeStep?: number;
+  steps: Step[];
+};
 
 const args: StepperArgs = {
   activeStep: 0,
@@ -16,12 +18,12 @@ const args: StepperArgs = {
 };
 
 const meta: Meta<StepperArgs> = {
-  title: 'Components/Stepper',
-  component: AotwStepperComponent,
+  title: 'Components/Stepper (beta)',
+  component: FlagStepperComponent,
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [AotwStepperComponent, CommonModule]
+      imports: [FlagStepperComponent]
     })
   ],
   render: args => ({
