@@ -1,7 +1,7 @@
 {
   "name": "@aotw/ng-components",
   "description": "Archive of the World Angular Component Library",
-  "version": "0.0.3-next.6",
+  "version": "0.0.3-next.7",
   "keywords": [
     "angular",
     "aotw",
@@ -23,10 +23,14 @@
     "@angular/common": "^18.0.3",
     "@angular/core": "^18.0.3",
     "@aotw/components": "^0.0.2",
-    "@aotw/core": "^0.0.1"
+    "@aotw/core": "^0.0.2",
+    "rxjs": "^7.8.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@storybook/angular": "^7.5.3"
   },
   "sideEffects": false
 }
