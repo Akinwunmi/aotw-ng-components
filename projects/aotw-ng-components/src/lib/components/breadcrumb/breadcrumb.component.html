@@ -1,0 +1,8 @@
+@for (item of items; track $index) {
+  <a
+    tabindex="0"
+    (click)="selectItem(item)"
+    (keyup)="selectItem(item)"
+  >{{ item.title }}</a>
+  /
+}

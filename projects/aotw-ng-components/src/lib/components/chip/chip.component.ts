@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import {
   CUSTOM_ELEMENTS_SCHEMA,
+  ChangeDetectionStrategy,
   Component,
   HostBinding,
   HostListener,
@@ -12,6 +13,7 @@ import {
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './chip.component.html',
   styleUrls: ['./chip.component.scss']
 })

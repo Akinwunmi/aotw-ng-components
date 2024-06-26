@@ -50,6 +50,39 @@
     ],
     "interfaces": [
         {
+            "name": "BreadcrumbItem",
+            "id": "interface-BreadcrumbItem-746e13cf8ccdafd53121f2efffc8183d2f8c227dd65ccaae0a553d8c61edeed7d8a3293ac27f449cec6629b403e2fdef714e70b3963a55b45f600b6891380086",
+            "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface BreadcrumbItem {\n  title: string;\n  link?: string;\n}\n",
+            "properties": [
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "Chip",
             "id": "interface-Chip-466258e10c9da6a35b0d8e9d015677c82883e425af635bb189afbb80454e8a6b643465a32a7ae92b97a6619dd48448ebf1a33bc1136603f2a6ca9c297de1904d",
             "file": "projects/aotw-ng-components/src/lib/components/chip/chip.model.ts",
@@ -467,9 +500,111 @@
     ],
     "components": [
         {
+            "name": "AotwBreadcrumbComponent",
+            "id": "component-AotwBreadcrumbComponent-7950be586f9cace36f5ce33f96f2eed3708011f3ce4babe4d1803bdd8d841f90efcab8af2ae2c35bd9b9255762d8f3f807576d6b30f94c19cda13efaa3cebd01",
+            "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aotw-ng-breadcrumb",
+            "styleUrls": [
+                "./breadcrumb.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./breadcrumb.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "BreadcrumbItem[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "selectedItem",
+                    "defaultValue": "new EventEmitter<BreadcrumbItem>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "selectItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "BreadcrumbItem",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        125
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "BreadcrumbItem",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output\n} from '@angular/core';\n\nimport { BreadcrumbItem } from './breadcrumb.model';\n\n@Component({\n  selector: 'aotw-ng-breadcrumb',\n  standalone: true,\n  imports: [CommonModule],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './breadcrumb.component.html',\n  styleUrls: ['./breadcrumb.component.scss']\n})\nexport class AotwBreadcrumbComponent {\n  @Input()\n  public items: BreadcrumbItem[] = [];\n\n  @Output()\n  public selectedItem = new EventEmitter<BreadcrumbItem>();\n\n  public selectItem(item: BreadcrumbItem): void {\n    this.selectedItem.emit(item);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  color: var(--aotw-color-primary-500);\n  font-family: var(--aotw-font-family-primary);\n}\n\na {\n  cursor: pointer;\n  text-decoration: underline;\n  text-transform: uppercase;\n  transition: color 200ms ease-in-out;\n\n  &:hover {\n    color: var(--aotw-color-primary-700);\n  }\n\n  &:active {\n    color: var(--aotw-color-primary-600);\n  }\n\n  &:visited {\n    color: var(--aotw-color-primary-500);\n  }\n}\n",
+                    "styleUrl": "./breadcrumb.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "@for (item of items; track $index) {\n  <a\n    tabindex=\"0\"\n    (click)=\"selectItem(item)\"\n    (keyup)=\"selectItem(item)\"\n  >{{ item.title }}</a>\n  /\n}\n"
+        },
+        {
             "name": "AotwChipComponent",
-            "id": "component-AotwChipComponent-695d9150969aa7c7d951164ea911272ea0510dfc1f9e98250802fe20addd1553ae23b3879a2a0329ee149ad39d51523bc6ed2ba573d74f376778a04d6a8dbbe7",
+            "id": "component-AotwChipComponent-f0436cd7cf26cd0df6deeeb1e4d3784bd149349240e14825686bed79111664459ae052f7363900553130e0ec747e347c0105b44888f5145cad1b1e95ebc55017",
             "file": "projects/aotw-ng-components/src/lib/components/chip/chip.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -491,7 +626,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 22,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -500,7 +635,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 26,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -508,7 +643,7 @@
                     "name": "size",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 29,
                     "type": "\"small\" | \"medium\"",
                     "decorators": []
                 }
@@ -529,7 +664,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -574,7 +709,7 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30
+                    "line": 32
                 }
             ],
             "standalone": true,
@@ -587,7 +722,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  CUSTOM_ELEMENTS_SCHEMA,\n  Component,\n  HostBinding,\n  HostListener,\n  Input\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-chip',\n  standalone: true,\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  imports: [CommonModule],\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class AotwChipComponent {\n  @Input()\n  public active = false;\n\n  @HostBinding('class.disabled')\n  @Input()\n  public disabled = false;\n\n  @Input()\n  public size?: 'small' | 'medium';\n\n  @HostListener('mousedown', ['$event'])\n  public onMouseDown(event: MouseEvent): void {\n    // Prevents selection of neighbouring text when clicking multiple times\n    if (event.detail > 1) {\n      event.preventDefault();\n    }\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport {\n  CUSTOM_ELEMENTS_SCHEMA,\n  ChangeDetectionStrategy,\n  Component,\n  HostBinding,\n  HostListener,\n  Input\n} from '@angular/core';\n\n@Component({\n  selector: 'aotw-ng-chip',\n  standalone: true,\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n  imports: [CommonModule],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  templateUrl: './chip.component.html',\n  styleUrls: ['./chip.component.scss']\n})\nexport class AotwChipComponent {\n  @Input()\n  public active = false;\n\n  @HostBinding('class.disabled')\n  @Input()\n  public disabled = false;\n\n  @Input()\n  public size?: 'small' | 'medium';\n\n  @HostListener('mousedown', ['$event'])\n  public onMouseDown(event: MouseEvent): void {\n    // Prevents selection of neighbouring text when clicking multiple times\n    if (event.detail > 1) {\n      event.preventDefault();\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -597,7 +732,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<aotw-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n  <ng-content></ng-content>\n</aotw-chip>\n"
+            "templateData": "<aotw-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n  <ng-content />\n</aotw-chip>\n"
         },
         {
             "name": "AotwChipGroupComponent",
@@ -716,7 +851,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aotw-chip-group>\n  <aotw-chip\n    *ngFor=\"let chip of chips\"\n    #chip\n    [size]=\"size\"\n    [active]=\"chip.active\"\n    [disabled]=\"chip.disabled\"\n    (click)=\"emitActiveChip(chip)\"\n  >\n    <ng-container *ngIf=\"chip.label\">\n      {{ chip.label }}\n    </ng-container>\n    <aotw-icon\n      *ngIf=\"chip.icon\"\n      [name]=\"chip.icon\"\n      [size]=\"size === 'medium' ? 'extra-large' : 'medium'\"\n    ></aotw-icon>\n  </aotw-chip>\n</aotw-chip-group>\n"
+            "templateData": "<aotw-chip-group>\n  @for (chip of chips; track $index) {\n    <aotw-chip\n      #chip\n      [size]=\"size\"\n      [active]=\"chip.active\"\n      [disabled]=\"chip.disabled\"\n      (click)=\"emitActiveChip(chip)\"\n    >\n      @if (chip.label) {\n        {{ chip.label }}\n      }\n      @if (chip.icon) {\n        <aotw-icon\n          [name]=\"chip.icon\"\n          [size]=\"size === 'medium' ? 'extra-large' : 'medium'\"\n        />\n      }\n    </aotw-chip>\n  }\n</aotw-chip-group>\n"
         },
         {
             "name": "AotwDynamicTextComponent",
@@ -775,7 +910,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<aotw-dynamic-text [alignment]=\"alignment\">\n  <ng-content></ng-content>\n</aotw-dynamic-text>\n"
+            "templateData": "<aotw-dynamic-text [alignment]=\"alignment\">\n  <ng-content />\n</aotw-dynamic-text>\n"
         },
         {
             "name": "AotwFormFieldComponent",
@@ -842,7 +977,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<aotw-field>\n  <aotw-label *ngIf=\"label\">\n    {{ label }}\n  </aotw-label>\n  <ng-content></ng-content>\n  <aotw-message>\n    {{ message }}\n  </aotw-message>\n</aotw-field>\n"
+            "templateData": "<aotw-field>\n  @if (label) {\n    <aotw-label>\n      {{ label }}\n    </aotw-label>\n  }\n  <ng-content />\n  <aotw-message>\n    {{ message }}\n  </aotw-message>\n</aotw-field>\n"
         },
         {
             "name": "AotwIconComponent",
@@ -910,7 +1045,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<aotw-icon [name]=\"name\" [size]=\"size\"></aotw-icon>\n"
+            "templateData": "<aotw-icon [name]=\"name\" [size]=\"size\" />\n"
         },
         {
             "name": "AotwLabelComponent",
@@ -953,7 +1088,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<aotw-label>\n  <ng-content></ng-content>\n</aotw-label>\n"
+            "templateData": "<aotw-label>\n  <ng-content />\n</aotw-label>\n"
         },
         {
             "name": "AotwListItemComponent",
@@ -1015,11 +1150,11 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<aotw-list-item [active]=\"active\" [disabled]=\"disabled\">\n  <ng-content></ng-content>\n</aotw-list-item>\n"
+            "templateData": "<aotw-list-item [active]=\"active\" [disabled]=\"disabled\">\n  <ng-content />\n</aotw-list-item>\n"
         },
         {
             "name": "AotwSkeletonComponent",
-            "id": "component-AotwSkeletonComponent-bebe34d3a97b4cf3cea599ad711fc942d088e3f1f3159d3edc3dcd0091a7d61d54b288003b7523cd61afbf94dba3de181f7db44f9dce256510f9db487e5c9535",
+            "id": "component-AotwSkeletonComponent-50e523f4d86f921bb3ca6854f65ab69bfe77c71cd71c186192e4f8b058e3b105511fb96ad2cf28fe2bfd195a921ccc5cc8221304b4983bd33cec9a5c206972f1",
             "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1030,9 +1165,8 @@
             "selector": "aotw-ng-skeleton",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./skeleton.component.html"
-            ],
+            "template": "",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
@@ -1072,13 +1206,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'aotw-ng-skeleton',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './skeleton.component.html',\n  styleUrl: './skeleton.component.scss',\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class AotwSkeletonComponent {\n  @HostBinding('class.soft')\n  @Input()\n  public soft = false;\n\n  @HostBinding('class.loading')\n  @Input()\n  public loading = false;\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'aotw-ng-skeleton',\n  standalone: true,\n  imports: [CommonModule],\n  template: '',\n  styleUrl: './skeleton.component.scss',\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class AotwSkeletonComponent {\n  @HostBinding('class.soft')\n  @Input()\n  public soft = false;\n\n  @HostBinding('class.loading')\n  @Input()\n  public loading = false;\n}\n",
             "styleUrl": "./skeleton.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": ""
+            "extends": []
         },
         {
             "name": "AotwStepperComponent",
@@ -1258,7 +1391,7 @@
                 "OnDestroy",
                 "OnInit"
             ],
-            "templateData": "<aotw-stepper>\n  <aotw-step\n    *ngFor=\"let step of steps; let i = index\"\n    [active]=\"activeStep === i\"\n    [disabled]=\"step.disabled\"\n    (click)=\"setActiveStep(i)\"\n  >\n    {{ step.label }}\n  </aotw-step>\n</aotw-stepper>\n"
+            "templateData": "<aotw-stepper>\n  @for (step of steps; let i = $index; track i) {\n    <aotw-step\n      [active]=\"activeStep === i\"\n      [disabled]=\"step.disabled\"\n      (click)=\"setActiveStep(i)\"\n    >\n      {{ step.label }}\n    </aotw-step>\n  }\n</aotw-stepper>\n"
         },
         {
             "name": "AotwTabGroupComponent",
@@ -1361,7 +1494,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<aotw-tab-group [activeTab]=\"activeTab\">\n  <aotw-tab\n    *ngFor=\"let tab of tabs\"\n    [disabled]=\"tab.disabled\"\n    (click)=\"setActiveTab(tab)\"\n  >\n    {{ tab.label }}\n  </aotw-tab>\n</aotw-tab-group>\n"
+            "templateData": "<aotw-tab-group [activeTab]=\"activeTab\">\n  @for (tab of tabs; track $index) {\n    <aotw-tab [disabled]=\"tab.disabled\" (click)=\"setActiveTab(tab)\">\n      {{ tab.label }}\n    </aotw-tab>\n  }\n</aotw-tab-group>\n"
         },
         {
             "name": "AotwYearPickerComponent",
@@ -1556,7 +1689,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aotw-ng-chip [disabled]=\"min === activeRange[0]\" (click)=\"previous()\">\n  <aotw-ng-icon name=\"chevron-up\" size=\"medium\"></aotw-ng-icon>\n</aotw-ng-chip>\n<ul>\n  <li *ngFor=\"let year of activeRange | range\">\n    <aotw-ng-chip size=\"medium\" [active]=\"year === selected\" (click)=\"setYear(year)\">\n      {{ year }}\n    </aotw-ng-chip>\n  </li>\n</ul>\n<aotw-ng-chip [disabled]=\"max === activeRange[1]\" (click)=\"next()\">\n  <aotw-ng-icon name=\"chevron-down\" size=\"medium\"></aotw-ng-icon>\n</aotw-ng-chip>\n"
+            "templateData": "<aotw-ng-chip [disabled]=\"min === activeRange[0]\" (click)=\"previous()\">\n  <aotw-ng-icon name=\"chevron-up\" size=\"medium\" />\n</aotw-ng-chip>\n<ul>\n  @for (year of activeRange | range; track $index) {\n    <li>\n      <aotw-ng-chip size=\"medium\" [active]=\"year === selected\" (click)=\"setYear(year)\">\n        {{ year }}\n      </aotw-ng-chip>\n    </li>\n  }\n</ul>\n<aotw-ng-chip [disabled]=\"max === activeRange[1]\" (click)=\"next()\">\n  <aotw-ng-icon name=\"chevron-down\" size=\"medium\" />\n</aotw-ng-chip>\n"
         }
     ],
     "modules": [],
@@ -1581,6 +1714,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    ...args,\n    active: true\n  }\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "BreadcrumbArgs",
+                "defaultValue": "{\n  items: [\n    { title: 'Home', link: '/' },\n    { title: 'Category', link: '/category' }\n  ]\n}"
             },
             {
                 "name": "args",
@@ -1636,21 +1779,21 @@
                 "name": "args",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StepperArgs",
-                "defaultValue": "{\n  activeStep: 0,\n  steps: [\n    { disabled: false, label: 'Step 1' },\n    { disabled: false, label: 'Step 2' },\n    { disabled: true, label: 'Step 3' },\n  ]\n}"
-            },
-            {
-                "name": "args",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "SkeletonArgs",
                 "defaultValue": "{\n  loading: true,\n  soft: false\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StepperArgs",
+                "defaultValue": "{\n  activeStep: 0,\n  steps: [\n    { disabled: false, label: 'Step 1' },\n    { disabled: false, label: 'Step 2' },\n    { disabled: true, label: 'Step 3' },\n  ]\n}"
             },
             {
                 "name": "Checkboxes",
@@ -1661,6 +1804,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    ...args,\n    inputType: 'checkbox'\n  }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
             },
             {
                 "name": "Default",
@@ -1716,7 +1869,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1726,7 +1879,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1776,11 +1929,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BreadcrumbArgs>",
+                "defaultValue": "{\n  title: 'Components/Breadcrumb',\n  component: AotwBreadcrumbComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwBreadcrumbComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ChipArgs>",
-                "defaultValue": "{\n  title: 'Components/Chip',\n  component: AotwChipComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipComponent, AotwIconComponent, CommonModule]\n    })\n  ],\n  render: ({ icon, label, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n        <aotw-ng-icon\n          *ngIf=${icon.length}\n          name=${icon}\n          [size]=\"size\"\n        ></aotw-ng-icon>\n        ${label}\n      </aotw-ng-chip>\n    `\n  }),\n  argTypes: {\n    icon: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    label: {\n      control: 'text'\n    }\n  }\n}"
+                "defaultValue": "{\n  title: 'Components/Chip',\n  component: AotwChipComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipComponent, AotwIconComponent, CommonModule]\n    })\n  ],\n  render: ({ icon, label, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n        @if (${icon.length}) {\n          <aotw-ng-icon name=${icon} [size]=\"size\" />\n        }\n        ${label}\n      </aotw-ng-chip>\n    `\n  }),\n  argTypes: {\n    icon: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    label: {\n      control: 'text'\n    }\n  }\n}"
             },
             {
                 "name": "meta",
@@ -1810,7 +1973,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FormFieldArgs>",
-                "defaultValue": "{\n  title: 'Components/Form Field',\n  component: AotwFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwFormFieldComponent, CommonModule]\n    })\n  ],\n  render: ({ inputType, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-form-field [label]=\"label\" [message]=\"message\">\n        <input *ngIf=${inputType === 'text'} />\n        <ng-container *ngIf=${inputType === 'checkbox'}>\n          <input id=\"checkOne\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkOne\">Option 1</label>\n          <input id=\"checkTwo\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkTwo\">Option 2</label>\n        </ng-container>\n        <ng-container *ngIf=${inputType === 'radio'}>\n          <input id=\"radioOne\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioOne\">Option 1</label>\n          <input id=\"radioTwo\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioTwo\">Option 2</label>\n        </ng-container>\n      </aotw-ng-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['checkbox', 'radio', 'text']\n    },\n    label: {\n      control: 'text'\n    },\n    message: {\n      control: 'text'\n    }\n  }\n}"
+                "defaultValue": "{\n  title: 'Components/Form Field',\n  component: AotwFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwFormFieldComponent, CommonModule]\n    })\n  ],\n  render: ({ inputType, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-form-field [label]=\"label\" [message]=\"message\">\n        @if (${inputType === 'text'}) {\n          <input />\n        }\n        @if (${inputType === 'checkbox'}) {\n          <input id=\"checkOne\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkOne\">Option 1</label>\n          <input id=\"checkTwo\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkTwo\">Option 2</label>\n        }\n        @if (${inputType === 'radio'}) {\n          <input id=\"radioOne\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioOne\">Option 1</label>\n          <input id=\"radioTwo\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioTwo\">Option 2</label>\n        }\n      </aotw-ng-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['checkbox', 'radio', 'text']\n    },\n    label: {\n      control: 'text'\n    },\n    message: {\n      control: 'text'\n    }\n  }\n}"
             },
             {
                 "name": "meta",
@@ -1820,17 +1983,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ListItemArgs>",
-                "defaultValue": "{\n  title: 'Components/List Item',\n  component: AotwListItemComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwIconComponent, AotwListItemComponent, CommonModule]\n    })\n  ],\n  render: ({label, prefix, suffix, ...args}) => ({\n    props: args,\n    template: `\n      <aotw-ng-list-item [active]=\"active\" [disabled]=\"disabled\">\n        <aotw-ng-icon\n          *ngIf=\"${prefix.length}\"\n          name=\"${prefix}\"\n          prefix\n        ></aotw-ng-icon>\n        ${label}\n        <aotw-ng-icon\n          *ngIf=\"${suffix.length}\"\n          name=\"${suffix}\"\n          suffix\n        ></aotw-ng-icon>\n      </aotw-ng-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    prefix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    suffix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    }\n  }\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<StepperArgs>",
-                "defaultValue": "{\n  title: 'Components/Stepper',\n  component: AotwStepperComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwStepperComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+                "defaultValue": "{\n  title: 'Components/List Item',\n  component: AotwListItemComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwIconComponent, AotwListItemComponent, CommonModule]\n    })\n  ],\n  render: ({label, prefix, suffix, ...args}) => ({\n    props: args,\n    template: `\n      <aotw-ng-list-item [active]=\"active\" [disabled]=\"disabled\">\n        @if (${prefix.length}) {\n          <aotw-ng-icon name=\"${prefix}\" prefix />\n        }\n        ${label}\n        @if (${suffix.length}) {\n          <aotw-ng-icon name=\"${suffix}\" suffix />\n        }\n      </aotw-ng-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    prefix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    suffix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    }\n  }\n}"
             },
             {
                 "name": "meta",
@@ -1843,6 +1996,16 @@
                 "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: AotwSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwSkeletonComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args,\n    template: `\n      <aotw-ng-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `\n  }),\n  argTypes: {}\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<StepperArgs>",
+                "defaultValue": "{\n  title: 'Components/Stepper',\n  component: AotwStepperComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwStepperComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1850,7 +2013,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: 'var(--aotw-color-grey-200)'\n        },\n        {\n          name: 'primary',\n          value: 'var(--aotw-color-primary-500)'\n        },\n        {\n          name: 'dark',\n          value: 'var(--aotw-color-grey-700)'\n        }\n      ]\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: 'var(--aotw-color-grey-200)'\n        },\n        {\n          name: 'primary',\n          value: 'var(--aotw-color-primary-500)'\n        },\n        {\n          name: 'dark',\n          value: 'var(--aotw-color-grey-700)'\n        }\n      ]\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
             },
             {
                 "name": "RadioButtons",
@@ -1905,6 +2068,17 @@
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "BreadcrumbArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "Pick<AotwBreadcrumbComponent | items>",
+                "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
             {
                 "name": "ChipArgs",
                 "ctype": "miscellaneous",
@@ -1986,6 +2160,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<BreadcrumbArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<ChipArgs>",
                 "file": "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts",
                 "deprecated": false,
@@ -2041,8 +2226,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<StepperArgs>",
-                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                "rawtype": "StoryObj<SkeletonArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2052,8 +2237,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SkeletonArgs>",
-                "file": "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts",
+                "rawtype": "StoryObj<StepperArgs>",
+                "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2121,7 +2306,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ChipArgs>",
-                    "defaultValue": "{\n  title: 'Components/Chip',\n  component: AotwChipComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipComponent, AotwIconComponent, CommonModule]\n    })\n  ],\n  render: ({ icon, label, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n        <aotw-ng-icon\n          *ngIf=${icon.length}\n          name=${icon}\n          [size]=\"size\"\n        ></aotw-ng-icon>\n        ${label}\n      </aotw-ng-chip>\n    `\n  }),\n  argTypes: {\n    icon: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    label: {\n      control: 'text'\n    }\n  }\n}"
+                    "defaultValue": "{\n  title: 'Components/Chip',\n  component: AotwChipComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwChipComponent, AotwIconComponent, CommonModule]\n    })\n  ],\n  render: ({ icon, label, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-chip [active]=\"active\" [disabled]=\"disabled\" [size]=\"size\">\n        @if (${icon.length}) {\n          <aotw-ng-icon name=${icon} [size]=\"size\" />\n        }\n        ${label}\n      </aotw-ng-chip>\n    `\n  }),\n  argTypes: {\n    icon: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    label: {\n      control: 'text'\n    }\n  }\n}"
                 }
             ],
             "projects/aotw-ng-components/src/lib/components/list-item/list-item.stories.ts": [
@@ -2173,7 +2358,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ListItemArgs>",
-                    "defaultValue": "{\n  title: 'Components/List Item',\n  component: AotwListItemComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwIconComponent, AotwListItemComponent, CommonModule]\n    })\n  ],\n  render: ({label, prefix, suffix, ...args}) => ({\n    props: args,\n    template: `\n      <aotw-ng-list-item [active]=\"active\" [disabled]=\"disabled\">\n        <aotw-ng-icon\n          *ngIf=\"${prefix.length}\"\n          name=\"${prefix}\"\n          prefix\n        ></aotw-ng-icon>\n        ${label}\n        <aotw-ng-icon\n          *ngIf=\"${suffix.length}\"\n          name=\"${suffix}\"\n          suffix\n        ></aotw-ng-icon>\n      </aotw-ng-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    prefix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    suffix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    }\n  }\n}"
+                    "defaultValue": "{\n  title: 'Components/List Item',\n  component: AotwListItemComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwIconComponent, AotwListItemComponent, CommonModule]\n    })\n  ],\n  render: ({label, prefix, suffix, ...args}) => ({\n    props: args,\n    template: `\n      <aotw-ng-list-item [active]=\"active\" [disabled]=\"disabled\">\n        @if (${prefix.length}) {\n          <aotw-ng-icon name=\"${prefix}\" prefix />\n        }\n        ${label}\n        @if (${suffix.length}) {\n          <aotw-ng-icon name=\"${suffix}\" suffix />\n        }\n      </aotw-ng-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    prefix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    },\n    suffix: {\n      control: 'select',\n      options: icons.map(icon => icon.name)\n    }\n  }\n}"
                 },
                 {
                     "name": "WithAffixes",
@@ -2184,6 +2369,38 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    ...args,\n    prefix: 'check',\n    suffix: 'ellipsis'\n  }\n}"
+                }
+            ],
+            "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BreadcrumbArgs",
+                    "defaultValue": "{\n  items: [\n    { title: 'Home', link: '/' },\n    { title: 'Category', link: '/category' }\n  ]\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<BreadcrumbArgs>",
+                    "defaultValue": "{\n  title: 'Components/Breadcrumb',\n  component: AotwBreadcrumbComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwBreadcrumbComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
                 }
             ],
             "projects/aotw-ng-components/src/lib/components/chip-group/chip-group.stories.ts": [
@@ -2299,7 +2516,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FormFieldArgs>",
-                    "defaultValue": "{\n  title: 'Components/Form Field',\n  component: AotwFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwFormFieldComponent, CommonModule]\n    })\n  ],\n  render: ({ inputType, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-form-field [label]=\"label\" [message]=\"message\">\n        <input *ngIf=${inputType === 'text'} />\n        <ng-container *ngIf=${inputType === 'checkbox'}>\n          <input id=\"checkOne\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkOne\">Option 1</label>\n          <input id=\"checkTwo\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkTwo\">Option 2</label>\n        </ng-container>\n        <ng-container *ngIf=${inputType === 'radio'}>\n          <input id=\"radioOne\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioOne\">Option 1</label>\n          <input id=\"radioTwo\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioTwo\">Option 2</label>\n        </ng-container>\n      </aotw-ng-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['checkbox', 'radio', 'text']\n    },\n    label: {\n      control: 'text'\n    },\n    message: {\n      control: 'text'\n    }\n  }\n}"
+                    "defaultValue": "{\n  title: 'Components/Form Field',\n  component: AotwFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwFormFieldComponent, CommonModule]\n    })\n  ],\n  render: ({ inputType, ...args }) => ({\n    props: args,\n    template: `\n      <aotw-ng-form-field [label]=\"label\" [message]=\"message\">\n        @if (${inputType === 'text'}) {\n          <input />\n        }\n        @if (${inputType === 'checkbox'}) {\n          <input id=\"checkOne\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkOne\">Option 1</label>\n          <input id=\"checkTwo\" aotw-checkbox type=\"checkbox\" />\n          <label for=\"checkTwo\">Option 2</label>\n        }\n        @if (${inputType === 'radio'}) {\n          <input id=\"radioOne\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioOne\">Option 1</label>\n          <input id=\"radioTwo\" aotw-radio-button type=\"radio\" name=\"radio-buttons\" />\n          <label for=\"radioTwo\">Option 2</label>\n        }\n      </aotw-ng-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['checkbox', 'radio', 'text']\n    },\n    label: {\n      control: 'text'\n    },\n    message: {\n      control: 'text'\n    }\n  }\n}"
                 },
                 {
                     "name": "RadioButtons",
@@ -2320,38 +2537,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    ...args,\n    message: 'Message'\n  }\n}"
-                }
-            ],
-            "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts": [
-                {
-                    "name": "args",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StepperArgs",
-                    "defaultValue": "{\n  activeStep: 0,\n  steps: [\n    { disabled: false, label: 'Step 1' },\n    { disabled: false, label: 'Step 2' },\n    { disabled: true, label: 'Step 3' },\n  ]\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{ args }"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<StepperArgs>",
-                    "defaultValue": "{\n  title: 'Components/Stepper',\n  component: AotwStepperComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwStepperComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
                 }
             ],
             "projects/aotw-ng-components/src/lib/components/skeleton/skeleton.stories.ts": [
@@ -2406,6 +2591,38 @@
                     "defaultValue": "{\n  args: { ...args, loading: false }\n}"
                 }
             ],
+            "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StepperArgs",
+                    "defaultValue": "{\n  activeStep: 0,\n  steps: [\n    { disabled: false, label: 'Step 1' },\n    { disabled: false, label: 'Step 2' },\n    { disabled: true, label: 'Step 3' },\n  ]\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/aotw-ng-components/src/lib/components/stepper/stepper.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<StepperArgs>",
+                    "defaultValue": "{\n  title: 'Components/Stepper',\n  component: AotwStepperComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [AotwStepperComponent, CommonModule]\n    })\n  ],\n  render: args => ({\n    props: args\n  }),\n  argTypes: {}\n}"
+                }
+            ],
             "projects/aotw-ng-components/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -2415,13 +2632,37 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: 'var(--aotw-color-grey-200)'\n        },\n        {\n          name: 'primary',\n          value: 'var(--aotw-color-primary-500)'\n        },\n        {\n          name: 'dark',\n          value: 'var(--aotw-color-grey-700)'\n        }\n      ]\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: 'var(--aotw-color-grey-200)'\n        },\n        {\n          name: 'primary',\n          value: 'var(--aotw-color-primary-500)'\n        },\n        {\n          name: 'dark',\n          value: 'var(--aotw-color-grey-700)'\n        }\n      ]\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts": [
+                {
+                    "name": "BreadcrumbArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "Pick<AotwBreadcrumbComponent | items>",
+                    "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BreadcrumbArgs>",
+                    "file": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/aotw-ng-components/src/lib/components/chip/chip.stories.ts": [
                 {
                     "name": "ChipArgs",
@@ -2603,6 +2844,54 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AotwBreadcrumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BreadcrumbItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/aotw-ng-components/src/lib/components/breadcrumb/breadcrumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

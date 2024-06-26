@@ -1,3 +1,4 @@
+export * from './breadcrumb';
 export * from './chip';
 export * from './chip-group';
 export * from './dynamic-text';

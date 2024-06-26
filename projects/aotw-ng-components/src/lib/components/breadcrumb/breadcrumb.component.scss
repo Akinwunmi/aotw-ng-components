@@ -1,0 +1,23 @@
+:host {
+  color: var(--aotw-color-primary-500);
+  font-family: var(--aotw-font-family-primary);
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  text-transform: uppercase;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: var(--aotw-color-primary-700);
+  }
+
+  &:active {
+    color: var(--aotw-color-primary-600);
+  }
+
+  &:visited {
+    color: var(--aotw-color-primary-500);
+  }
+}
