@@ -1,0 +1,39 @@
+{
+  "name": "@flagarchive/angular",
+  "description": "Flag Archive Angular Design System",
+  "version": "0.0.1-beta.4",
+  "keywords": [
+    "angular",
+    "components",
+    "core",
+    "design system",
+    "flag",
+    "flagarchive",
+    "flag archive",
+    "library",
+    "scss",
+    "signals",
+    "typescript",
+    "ui"
+  ],
+  "author": {
+    "name": "Jurrit van der Ploeg",
+    "email": "jurritvanderploeg.dev@gmail.com",
+    "url": "https://flagarchive.com"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "@angular/cdk": "^18.0.3",
+    "@angular/common": "^18.0.3",
+    "@angular/core": "^18.0.3",
+    "@angular/platform-browser": "^18.0.3",
+    "rxjs": "^7.8.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@storybook/angular": "^7.5.3"
+  },
+  "sideEffects": false
+}

@@ -1,8 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
-@mixin typography-body {
-  font-family: var(--flag-font-family-primary);
-  font-weight: var(--flag-font-weight-regular);
-  font-size: var(--flag-font-size-sm);
-  line-height: var(--flag-font-line-height-sm);
-}

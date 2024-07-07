@@ -1,0 +1,6 @@
+@use 'typography' as *;
+
+[flagLabel] {
+  @include typography-body;
+  color: var(--flag-color-primary-500);
+}

@@ -3,8 +3,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "aotw-ng-components": [
-        "dist/aotw-ng-components"
+      "flagarchive": [
+        "dist/flagarchive"
       ]
     },
     "baseUrl": "./",

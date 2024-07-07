@@ -31,7 +31,7 @@ module.exports = {
           'error',
           {
             'type': 'attribute',
-            'prefix': 'aotw',
+            'prefix': 'flag',
             'style': 'camelCase'
           }
         ],
