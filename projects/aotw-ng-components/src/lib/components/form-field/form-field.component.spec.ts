@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AotwFormFieldComponent } from './form-field.component';
+import { FlagFormFieldComponent } from './form-field.component';
 
-describe('AotwFormFieldComponent', () => {
-  let component: AotwFormFieldComponent;
-  let fixture: ComponentFixture<AotwFormFieldComponent>;
+describe('FlagFormFieldComponent', () => {
+  let component: FlagFormFieldComponent;
+  let fixture: ComponentFixture<FlagFormFieldComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AotwFormFieldComponent]
+      imports: [FlagFormFieldComponent]
     });
-    fixture = TestBed.createComponent(AotwFormFieldComponent);
+    fixture = TestBed.createComponent(FlagFormFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

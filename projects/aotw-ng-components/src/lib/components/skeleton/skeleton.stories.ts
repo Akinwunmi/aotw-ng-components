@@ -1,5 +1,3 @@
-import { CommonModule } from '@angular/common';
-import '@aotw/components';
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 
 import { AotwSkeletonComponent } from './skeleton.component';
@@ -17,7 +15,7 @@ const meta: Meta<SkeletonArgs> = {
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [AotwSkeletonComponent, CommonModule]
+      imports: [AotwSkeletonComponent]
     })
   ],
   render: args => ({

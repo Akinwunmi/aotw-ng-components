@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/aotw-ng-components",
       "sourceRoot": "projects/aotw-ng-components/src",
-      "prefix": "lib",
+      "prefix": "aotw-ng",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -47,7 +47,7 @@
               "projects/aotw-ng-components"
             ],
             "styles": [
-              "node_modules/@aotw/core/dist/style.css",
+              "projects/aotw-ng-components/src/lib/core/styles/index.scss",
               "projects/aotw-ng-components/src/stories/assets/styles.scss"
             ],
             "port": 6006
@@ -67,8 +67,22 @@
             ],
             "outputDir": "storybook-static"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/aotw-ng-components/**/*.ts",
+              "projects/aotw-ng-components/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

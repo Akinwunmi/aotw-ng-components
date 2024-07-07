@@ -1,24 +1,10 @@
-import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'aotw-ng-form-field',
-  standalone: true,
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'flag-form-field',
+  standalone: true,
+  styleUrl: './form-field.component.scss',
   templateUrl: './form-field.component.html',
-  styleUrls: ['./form-field.component.scss']
 })
-export class AotwFormFieldComponent {
-  @Input()
-  public label?: string;
-
-  @Input()
-  public message?: string;
-}
+export class FlagFormFieldComponent {}

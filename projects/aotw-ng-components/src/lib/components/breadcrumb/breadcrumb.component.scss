@@ -1,0 +1,23 @@
+:host {
+  color: var(--flag-color-primary-500);
+  font-family: var(--flag-font-family-primary);
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  text-transform: uppercase;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: var(--flag-color-primary-700);
+  }
+
+  &:active {
+    color: var(--flag-color-primary-600);
+  }
+
+  &:visited {
+    color: var(--flag-color-primary-500);
+  }
+}

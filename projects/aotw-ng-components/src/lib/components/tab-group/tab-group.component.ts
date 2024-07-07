@@ -1,35 +1,31 @@
-import { CommonModule } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  EventEmitter,
-  Input,
-  Output,
+  computed,
+  input,
+  model,
 } from '@angular/core';
 
-import { Tab } from './tab-group.model';
+import { FlagTabComponent, Tab } from '../tab';
 
 @Component({
-  selector: 'aotw-ng-tab-group',
-  standalone: true,
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [FlagTabComponent, NgStyle],
+  selector: 'flag-tab-group',
+  standalone: true,
   templateUrl: './tab-group.component.html',
+  styleUrl: './tab-group.component.scss',
 })
-export class AotwTabGroupComponent {
-  @Input()
-  public activeTab = 0;
+export class FlagTabGroupComponent {
+  public tabs = input.required<Tab[]>();
 
-  @Input()
-  public tabs: Tab[] = [];
+  public active = model(0);
 
-  @Output()
-  public selectedTab = new EventEmitter<Tab>();
+  public linePosition = computed(() => `${100 / this.tabs().length * this.active()}%`);
+  public lineWidth = computed(() => `${100 / this.tabs().length}%`);
 
-  public setActiveTab(activeTab: Tab): void {
-    this.activeTab = activeTab.id;
-    this.selectedTab.emit(activeTab);
+  public setActive(id: number): void {
+    this.active.set(id);
   }
 }

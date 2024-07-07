@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AotwStepperComponent } from './stepper.component';
+import { FlagStepperComponent } from './stepper.component';
 
-describe('AotwStepperComponent', () => {
-  let component: AotwStepperComponent;
-  let fixture: ComponentFixture<AotwStepperComponent>;
+describe('FlagStepperComponent', () => {
+  let component: FlagStepperComponent;
+  let fixture: ComponentFixture<FlagStepperComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AotwStepperComponent]
+      imports: [FlagStepperComponent]
     });
-    fixture = TestBed.createComponent(AotwStepperComponent);
+    fixture = TestBed.createComponent(FlagStepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,3 @@
-import { AotwIconRegistry } from '@aotw/components';
-import icons from '@aotw/core/dist/icons/icons.json';
 import type { Preview } from '@storybook/angular';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 
@@ -9,21 +7,20 @@ setCompodocJson(docJson);
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     backgrounds: {
       default: 'light',
       values: [
         {
           name: 'light',
-          value: 'var(--aotw-color-grey-200)'
+          value: 'var(--flag-color-grey-200)'
         },
         {
           name: 'primary',
-          value: 'var(--aotw-color-primary-500)'
+          value: 'var(--flag-color-primary-500)'
         },
         {
           name: 'dark',
-          value: 'var(--aotw-color-grey-700)'
+          value: 'var(--flag-color-grey-700)'
         }
       ]
     },
@@ -35,7 +32,5 @@ const preview: Preview = {
     },
   },
 };
-
-AotwIconRegistry.register(icons);
 
 export default preview;

@@ -1,23 +1,34 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  CUSTOM_ELEMENTS_SCHEMA,
-  Input,
+  HostBinding,
+  input,
 } from '@angular/core';
 
 @Component({
-  selector: 'aotw-ng-list-item',
-  standalone: true,
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './list-item.component.html'
+  selector: 'flag-list-item',
+  standalone: true,
+  styleUrl: './list-item.component.scss',
+  templateUrl: './list-item.component.html',
 })
-export class AotwListItemComponent {
-  @Input()
-  public active = false;
+export class FlagListItemComponent {
+  public active = input(false);
+  public disabled = input(false);
+  public interactive = input(true);
 
-  @Input()
-  public disabled = false;
+  @HostBinding('class.active')
+  protected get activeClass(): boolean {
+    return this.active();
+  }
+
+  @HostBinding('class.disabled')
+  protected get disabledClass(): boolean {
+    return this.disabled();
+  }
+
+  @HostBinding('class.interactive')
+  protected get interactiveClass(): boolean {
+    return this.interactive();
+  }
 }
