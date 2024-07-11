@@ -1,0 +1,26 @@
+@use 'typography' as *;
+
+[flagInput] {
+  @include typography-body;
+  background-color: var(--flag-color-white);
+  border: none;
+  border-radius: var(--flag-radius-sm);
+  box-sizing: border-box;
+  color: var(--flag-color-primary-500);
+  height: var(--flag-size-xl);
+  padding-inline: var(--flag-space-md);
+
+  &::placeholder {
+    color: var(--flag-color-grey-500);
+  }
+
+  &[disabled] {
+    background-color: var(--flag-color-grey-300);
+    color: var(--flag-color-grey-700);
+    pointer-events: none;
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+}

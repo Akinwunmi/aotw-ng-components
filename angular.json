@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aotw-ng-components": {
+    "flagarchive": {
       "projectType": "library",
-      "root": "projects/aotw-ng-components",
-      "sourceRoot": "projects/aotw-ng-components/src",
-      "prefix": "aotw-ng",
+      "root": "projects/flagarchive",
+      "sourceRoot": "projects/flagarchive/src",
+      "prefix": "flag",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/aotw-ng-components/ng-package.json"
+            "project": "projects/flagarchive/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/aotw-ng-components/tsconfig.lib.prod.json"
+              "tsConfig": "projects/flagarchive/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/aotw-ng-components/tsconfig.lib.json"
+              "tsConfig": "projects/flagarchive/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/aotw-ng-components/tsconfig.spec.json",
+            "tsConfig": "projects/flagarchive/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -37,18 +37,18 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "projects/aotw-ng-components/.storybook",
-            "browserTarget": "aotw-ng-components:build",
+            "configDir": "projects/flagarchive/.storybook",
+            "browserTarget": "flagarchive:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",
               "json",
               "-d",
-              "projects/aotw-ng-components"
+              "projects/flagarchive"
             ],
             "styles": [
-              "projects/aotw-ng-components/src/lib/core/styles/index.scss",
-              "projects/aotw-ng-components/src/stories/assets/styles.scss"
+              "projects/flagarchive/src/core/styles/index.scss",
+              "projects/flagarchive/src/stories/assets/styles.scss"
             ],
             "port": 6006
           }
@@ -56,14 +56,14 @@
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "configDir": "projects/aotw-ng-components/.storybook",
-            "browserTarget": "aotw-ng-components:build",
+            "configDir": "projects/flagarchive/.storybook",
+            "browserTarget": "flagarchive:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",
               "json",
               "-d",
-              "projects/aotw-ng-components"
+              "projects/flagarchive"
             ],
             "outputDir": "storybook-static"
           }
@@ -72,12 +72,19 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/aotw-ng-components/**/*.ts",
-              "projects/aotw-ng-components/**/*.html"
+              "projects/flagarchive/**/*.ts",
+              "projects/flagarchive/**/*.html"
             ]
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "changeDetection": "OnPush",
+      "prefix": "flag",
+      "style": "scss"
     }
   },
   "cli": {

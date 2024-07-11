@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Inter:wght@300;400;500;600&display=swap');
+
+@mixin typography-body {
+  font-family: var(--flag-font-family-primary);
+  font-weight: var(--flag-font-weight-regular);
+  font-size: var(--flag-font-size-sm);
+  line-height: var(--flag-font-line-height-sm);
+}
+
+@mixin typography-header-small {
+  font-family: var(--flag-font-family-primary);
+  font-weight: var(--flag-font-weight-regular);
+  font-size: var(--flag-font-size-md);
+  line-height: var(--flag-font-line-height-sm);
+}

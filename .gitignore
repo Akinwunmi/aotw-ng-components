@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Library
-/projects/aotw-ng-components/node_modules
+/projects/flagarchive/node_modules

@@ -1,0 +1,13 @@
+<button flagButton [disabled]="min === activeRange[0]" (click)="previous()">
+  <flag-icon>keyboard_arrow_up</flag-icon>
+</button>
+<div class="years">
+  @for (year of activeRange | range; track $index) {
+    <button flagButton [attr.raised]="year === selected || undefined" (click)="setYear(year)">
+      {{ year }}
+    </button>
+  }
+</div>
+<button flagButton [disabled]="max === activeRange[1]" (click)="next()">
+  <flag-icon>keyboard_arrow_down</flag-icon>
+</button>
