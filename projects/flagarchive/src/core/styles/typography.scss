@@ -7,6 +7,13 @@
   line-height: var(--flag-font-line-height-sm);
 }
 
+@mixin typography-body-small-medium {
+  font-family: var(--flag-font-family-primary);
+  font-weight: var(--flag-font-weight-medium);
+  font-size: var(--flag-font-size-xs);
+  line-height: var(--flag-font-line-height-md);
+}
+
 @mixin typography-header-small {
   font-family: var(--flag-font-family-primary);
   font-weight: var(--flag-font-weight-regular);

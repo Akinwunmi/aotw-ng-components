@@ -23,9 +23,15 @@
   --flag-color-grey-500: hsl(235, 10%, 50%);
   --flag-color-grey-600: hsl(235, 10%, 37%);
   --flag-color-grey-700: hsl(235, 10%, 23%);
-  --flag-color-success-500: hsl(150, 70%, 50%);
-  --flag-color-warning-500: hsl(39, 100%, 50%);
-  --flag-color-error-500: hsl(354, 100%, 50%);
+  --flag-color-success-100: hsl(150, 70%, 97%);
+  --flag-color-success-500: hsl(150, 70%, 51%);
+  --flag-color-success-600: hsl(150, 70%, 44%);
+  --flag-color-warning-100: hsl(39, 100%, 97%);
+  --flag-color-warning-500: hsl(39, 100%, 51%);
+  --flag-color-warning-600: hsl(39, 100%, 44%);
+  --flag-color-error-100: hsl(354, 100%, 97%);
+  --flag-color-error-500: hsl(354, 100%, 51%);
+  --flag-color-error-600: hsl(354, 100%, 44%);
   /* Elevation */
   --flag-elevation-xs: var(--flag-space-xs) var(--flag-space-xs) var(--flag-space-sm) var(--flag-color-grey-300);
   /* Font */
