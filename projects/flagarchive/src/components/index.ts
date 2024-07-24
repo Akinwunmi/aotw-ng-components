@@ -3,6 +3,7 @@ export * from './card';
 export * from './form-field';
 export * from './icon';
 export * from './list-item';
+export * from './pill';
 export * from './skeleton';
 export * from './stepper';
 export * from './tab';

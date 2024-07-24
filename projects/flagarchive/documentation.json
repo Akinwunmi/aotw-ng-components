@@ -964,6 +964,72 @@
             "templateData": "<ng-content />\n"
         },
         {
+            "name": "FlagPillComponent",
+            "id": "component-FlagPillComponent-cb72fbf1f5beb4a5d209a3472ff348d876c04a6fedae78fa18bc81d571f8706eee50f401d5b94edaa82cd1d4960d5b8f6b867c89cb21518d72f1fb58726f40a0",
+            "file": "projects/flagarchive/src/components/pill/pill.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flag-pill",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./pill.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "theme",
+                    "defaultValue": "input(PillTheme.Light)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "input(PillType.Primary)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, input } from '@angular/core';\n\nimport { PillTheme, PillType } from './pill.model';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [],\n  selector: 'flag-pill',\n  standalone: true,\n  styleUrl: './pill.component.scss',\n  templateUrl: './pill.component.html',\n})\nexport class FlagPillComponent {\n  public theme = input(PillTheme.Light);\n  public type = input(PillType.Primary);\n}\n",
+            "styleUrl": "./pill.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<ng-content />\n"
+        },
+        {
             "name": "FlagSkeletonComponent",
             "id": "component-FlagSkeletonComponent-80ea35dbfb99c71257d1443971e6c54b1e7648dddb72b4c42e3f36f9769ac6f4c621326c956f9905a4ade371fdc8a545d08d7605340a232240949ee48593b541",
             "file": "projects/flagarchive/src/components/skeleton/skeleton.component.ts",
@@ -1685,6 +1751,16 @@
                 "name": "args",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "PillArgs",
+                "defaultValue": "{\n  label: 'Beta',\n  theme: PillTheme.Light,\n  type: PillType.Primary,\n}"
+            },
+            {
+                "name": "args",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/flagarchive/src/components/stepper/stepper.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1766,6 +1842,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/flagarchive/src/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{ args }"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1860,6 +1946,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<SkeletonArgs>",
                 "defaultValue": "{\n  title: 'Components/Skeleton',\n  component: FlagSkeletonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagSkeletonComponent]\n    })\n  ],\n  render: args => ({\n    props: args,\n    template: `\n      <flag-skeleton\n        style=\"height: 8rem; width: 12rem\"\n        [loading]=\"loading\"\n        [soft]=\"soft\"\n      />\n    `\n  }),\n  argTypes: {}\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PillArgs>",
+                "defaultValue": "{\n  title: 'Components/List Item',\n  component: FlagPillComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagPillComponent],\n    })\n  ],\n  render: ({ label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-pill [theme]=\"theme\" [type]=\"type\">\n        ${label}\n      </flag-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n  }\n}"
             },
             {
                 "name": "meta",
@@ -2009,6 +2105,17 @@
                 "kind": 187
             },
             {
+                "name": "PillArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type",
+                "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 187
+            },
+            {
                 "name": "SkeletonArgs",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -2080,6 +2187,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<SkeletonArgs>",
                 "file": "projects/flagarchive/src/components/skeleton/skeleton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<PillArgs>",
+                "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2163,7 +2281,72 @@
                 "kind": 183
             }
         ],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "PillTheme",
+                "childs": [
+                    {
+                        "name": "Dark",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "dark"
+                    },
+                    {
+                        "name": "Light",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "light"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/flagarchive/src/components/pill/pill.model.ts"
+            },
+            {
+                "name": "PillType",
+                "childs": [
+                    {
+                        "name": "Error",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "error"
+                    },
+                    {
+                        "name": "Primary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "Secondary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "secondary"
+                    },
+                    {
+                        "name": "Success",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "success"
+                    },
+                    {
+                        "name": "Warning",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "warning"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/flagarchive/src/components/pill/pill.model.ts"
+            }
+        ],
         "groupedVariables": {
             "projects/flagarchive/src/components/list-item/list-item.stories.ts": [
                 {
@@ -2353,6 +2536,38 @@
                     "defaultValue": "{\n  args: { ...args, loading: false }\n}"
                 }
             ],
+            "projects/flagarchive/src/components/pill/pill.stories.ts": [
+                {
+                    "name": "args",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "PillArgs",
+                    "defaultValue": "{\n  label: 'Beta',\n  theme: PillTheme.Light,\n  type: PillType.Primary,\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{ args }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<PillArgs>",
+                    "defaultValue": "{\n  title: 'Components/List Item',\n  component: FlagPillComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagPillComponent],\n    })\n  ],\n  render: ({ label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-pill [theme]=\"theme\" [type]=\"type\">\n        ${label}\n      </flag-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n  }\n}"
+                }
+            ],
             "projects/flagarchive/src/components/stepper/stepper.stories.ts": [
                 {
                     "name": "args",
@@ -2517,7 +2732,74 @@
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {},
+        "groupedEnumerations": {
+            "projects/flagarchive/src/components/pill/pill.model.ts": [
+                {
+                    "name": "PillTheme",
+                    "childs": [
+                        {
+                            "name": "Dark",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "dark"
+                        },
+                        {
+                            "name": "Light",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "light"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/flagarchive/src/components/pill/pill.model.ts"
+                },
+                {
+                    "name": "PillType",
+                    "childs": [
+                        {
+                            "name": "Error",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "error"
+                        },
+                        {
+                            "name": "Primary",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "primary"
+                        },
+                        {
+                            "name": "Secondary",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "secondary"
+                        },
+                        {
+                            "name": "Success",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "success"
+                        },
+                        {
+                            "name": "Warning",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "warning"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/flagarchive/src/components/pill/pill.model.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {
             "projects/flagarchive/src/components/breadcrumb/breadcrumb.stories.ts": [
                 {
@@ -2609,6 +2891,30 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ListItemArgs>",
                     "file": "projects/flagarchive/src/components/list-item/list-item.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/flagarchive/src/components/pill/pill.stories.ts": [
+                {
+                    "name": "PillArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type",
+                    "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 187
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PillArgs>",
+                    "file": "projects/flagarchive/src/components/pill/pill.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2932,6 +3238,45 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WithAffixes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/pill/pill.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlagPillComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "args",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/flagarchive/src/components/pill/pill.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
