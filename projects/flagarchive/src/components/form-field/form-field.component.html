@@ -1,1 +1,7 @@
 <ng-content />
+@if (infoMessage()) {
+  <p>{{ infoMessage() }}</p>
+}
+@if (errorMessage()) {
+  <p class="error">{{ errorMessage() }}</p>
+}

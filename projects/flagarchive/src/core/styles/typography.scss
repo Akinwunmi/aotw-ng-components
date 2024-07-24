@@ -4,14 +4,21 @@
   font-family: var(--flag-font-family-primary);
   font-weight: var(--flag-font-weight-regular);
   font-size: var(--flag-font-size-sm);
-  line-height: var(--flag-font-line-height-sm);
+  line-height: var(--flag-font-line-height-md);
+}
+
+@mixin typography-body-small {
+  font-family: var(--flag-font-family-primary);
+  font-weight: var(--flag-font-weight-regular);
+  font-size: var(--flag-font-size-xs);
+  line-height: var(--flag-font-line-height-xs);
 }
 
 @mixin typography-body-small-medium {
   font-family: var(--flag-font-family-primary);
   font-weight: var(--flag-font-weight-medium);
   font-size: var(--flag-font-size-xs);
-  line-height: var(--flag-font-line-height-md);
+  line-height: var(--flag-font-line-height-xs);
 }
 
 @mixin typography-header-small {

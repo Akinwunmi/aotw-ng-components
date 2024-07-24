@@ -6,18 +6,32 @@ import {
 
 import { FlagFormFieldComponent } from './form-field.component';
 
-type FormFieldArgs = FlagFormFieldComponent & {
+type FormFieldArgs = {
+  disabled?: boolean;
+  errorMessage?: string;
+  infoMessage?: string;
   inputType: 'text';
-  label: string;
+  label?: string;
+  placeholder?: string;
+  readonly?: boolean;
+  required?: boolean;
+  value?: string;
 };
 
 const args: FormFieldArgs = {
+  disabled: false,
+  errorMessage: 'Please enter a location or organization',
+  infoMessage: 'An entity that is either a location or an organization',
   inputType: 'text',
-  label: 'Form Field'
+  label: 'Location / Organization',
+  placeholder: 'Enter location or organization',
+  readonly: false,
+  required: true,
+  value: '',
 };
 
 const meta: Meta<FormFieldArgs> = {
-  title: 'Components/Form Field (beta)',
+  title: 'Components/Form Field',
   component: FlagFormFieldComponent,
   tags: ['autodocs'],
   decorators: [
@@ -25,12 +39,32 @@ const meta: Meta<FormFieldArgs> = {
       imports: [FlagFormFieldComponent]
     })
   ],
-  render: ({ inputType, label, ...args }) => ({
+  render: ({
+    disabled,
+    errorMessage,
+    inputType,
+    label,
+    placeholder,
+    readonly,
+    required,
+    value,
+    ...args
+  }) => ({
     props: args,
     template: `
-      <flag-form-field>
-        ${label ? `<label flagLabel>${label}</label>` : ''}
-        ${inputType === 'text' ? '<input flagInput />' : ''}
+      <flag-form-field errorMessage="${errorMessage}" [infoMessage]="infoMessage">
+        ${label ? `<label
+          flagLabel
+          ${required && 'required'}
+        >${label}</label>` : ''}
+        ${inputType === 'text' ? `<input
+          flagInput
+          ${disabled && 'disabled'}
+          ${errorMessage && 'error'}
+          ${placeholder && `placeholder="${placeholder}"`}
+          ${readonly && 'readonly'}
+          ${value && `value="${value}"`}
+        />` : ''}
       </flag-form-field>
     `
   }),

@@ -965,7 +965,7 @@
         },
         {
             "name": "FlagPillComponent",
-            "id": "component-FlagPillComponent-cb72fbf1f5beb4a5d209a3472ff348d876c04a6fedae78fa18bc81d571f8706eee50f401d5b94edaa82cd1d4960d5b8f6b867c89cb21518d72f1fb58726f40a0",
+            "id": "component-FlagPillComponent-646b49ef52a5d1028320b074b9ef77c1d6001171a14369733dd8284bc76282f80d6fef563ed4b9a6ee2a659127d6f52353a2f329516df4ddd44aac258b4b5db8",
             "file": "projects/flagarchive/src/components/pill/pill.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -992,7 +992,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
+                    "line": 13,
                     "modifierKind": [
                         125
                     ]
@@ -1005,7 +1005,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 14,
                     "modifierKind": [
                         125
                     ]
@@ -1014,19 +1014,39 @@
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
-            "hostBindings": [],
+            "hostBindings": [
+                {
+                    "name": "class",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "hostListeners": [],
             "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, input } from '@angular/core';\n\nimport { PillTheme, PillType } from './pill.model';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  imports: [],\n  selector: 'flag-pill',\n  standalone: true,\n  styleUrl: './pill.component.scss',\n  templateUrl: './pill.component.html',\n})\nexport class FlagPillComponent {\n  public theme = input(PillTheme.Light);\n  public type = input(PillType.Primary);\n}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular/core';\n\nimport { PillTheme, PillType } from './pill.model';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-pill',\n  standalone: true,\n  styleUrl: './pill.component.scss',\n  templateUrl: './pill.component.html',\n})\nexport class FlagPillComponent {\n  public theme = input(PillTheme.Light);\n  public type = input(PillType.Primary);\n\n  @HostBinding('class')\n  public get class(): string {\n    return `${this.theme()} ${this.type()}`;\n  }\n}\n",
             "styleUrl": "./pill.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
+            "accessors": {
+                "class": {
+                    "name": "class",
+                    "getSignature": {
+                        "name": "class",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 17
+                    }
+                }
+            },
             "templateData": "<ng-content />\n"
         },
         {
@@ -1955,7 +1975,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PillArgs>",
-                "defaultValue": "{\n  title: 'Components/List Item',\n  component: FlagPillComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagPillComponent],\n    })\n  ],\n  render: ({ label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-pill [theme]=\"theme\" [type]=\"type\">\n        ${label}\n      </flag-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n  }\n}"
+                "defaultValue": "{\n  title: 'Components/Pill',\n  component: FlagPillComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagPillComponent],\n    })\n  ],\n  render: ({ label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-pill [theme]=\"theme\" [type]=\"type\">\n        ${label}\n      </flag-pill>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    theme: {\n      control: 'select',\n      options: Object.values(PillTheme),\n      defaultValue: PillTheme.Light,\n    },\n    type: {\n      control: 'select',\n      options: Object.values(PillType),\n      defaultValue: PillType.Primary,\n    }\n  }\n}"
             },
             {
                 "name": "meta",
@@ -2565,7 +2585,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PillArgs>",
-                    "defaultValue": "{\n  title: 'Components/List Item',\n  component: FlagPillComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagPillComponent],\n    })\n  ],\n  render: ({ label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-pill [theme]=\"theme\" [type]=\"type\">\n        ${label}\n      </flag-list-item>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n  }\n}"
+                    "defaultValue": "{\n  title: 'Components/Pill',\n  component: FlagPillComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagPillComponent],\n    })\n  ],\n  render: ({ label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-pill [theme]=\"theme\" [type]=\"type\">\n        ${label}\n      </flag-pill>\n    `\n  }),\n  argTypes: {\n    label: {\n      control: 'text',\n      defaultValue: 'Chip'\n    },\n    theme: {\n      control: 'select',\n      options: Object.values(PillTheme),\n      defaultValue: PillTheme.Light,\n    },\n    type: {\n      control: 'select',\n      options: Object.values(PillType),\n      defaultValue: PillType.Primary,\n    }\n  }\n}"
                 }
             ],
             "projects/flagarchive/src/components/stepper/stepper.stories.ts": [
@@ -3248,7 +3268,7 @@
                 "linktype": "component",
                 "name": "FlagPillComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
