@@ -677,7 +677,7 @@
         },
         {
             "name": "FlagFormFieldComponent",
-            "id": "component-FlagFormFieldComponent-1c92c7e0a93ee1b22e91cf744fb994f3e6886dcb308d9edce0401af05b3a59bfd1af01255765069a8fb2f6cb6fb49d3025cf2916a2b36ec208521aad5d675d10",
+            "id": "component-FlagFormFieldComponent-efc6e667e4932491eedfeccff04971773cffd14366187b454bce52a1105d49d72af76225d6132bdcbce3d85985e18ab1632343f83ffa3480016b044595c2e34f",
             "file": "projects/flagarchive/src/components/form-field/form-field.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -693,9 +693,63 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "errorMessage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        125
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "infoMessage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        125
+                    ],
+                    "required": false
+                }
+            ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "errorMessage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        125
+                    ],
+                    "required": false
+                },
+                {
+                    "name": "infoMessage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        125
+                    ],
+                    "required": false
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -706,13 +760,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-form-field',\n  standalone: true,\n  styleUrl: './form-field.component.scss',\n  templateUrl: './form-field.component.html',\n})\nexport class FlagFormFieldComponent {}\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, input } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  selector: 'flag-form-field',\n  standalone: true,\n  styleUrl: './form-field.component.scss',\n  templateUrl: './form-field.component.html',\n})\nexport class FlagFormFieldComponent {\n  public errorMessage = input<string>();\n  public infoMessage = input<string>();\n}\n",
             "styleUrl": "./form-field.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<ng-content />\n"
+            "templateData": "<ng-content />\n@if (infoMessage()) {\n  <p>{{ infoMessage() }}</p>\n}\n@if (errorMessage()) {\n  <p class=\"error\">{{ errorMessage() }}</p>\n}\n"
         },
         {
             "name": "FlagIconComponent",
@@ -1745,7 +1799,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "FormFieldArgs",
-                "defaultValue": "{\n  inputType: 'text',\n  label: 'Form Field'\n}"
+                "defaultValue": "{\n  disabled: false,\n  errorMessage: 'Please enter a location or organization',\n  infoMessage: 'An entity that is either a location or an organization',\n  inputType: 'text',\n  label: 'Location / Organization',\n  placeholder: 'Enter location or organization',\n  readonly: false,\n  required: true,\n  value: '',\n}"
             },
             {
                 "name": "args",
@@ -1945,7 +1999,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FormFieldArgs>",
-                "defaultValue": "{\n  title: 'Components/Form Field (beta)',\n  component: FlagFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagFormFieldComponent]\n    })\n  ],\n  render: ({ inputType, label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-form-field>\n        ${label ? `<label flagLabel>${label}</label>` : ''}\n        ${inputType === 'text' ? '<input flagInput />' : ''}\n      </flag-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['text']\n    },\n    label: {\n      control: 'text'\n    },\n  }\n}"
+                "defaultValue": "{\n  title: 'Components/Form Field',\n  component: FlagFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagFormFieldComponent]\n    })\n  ],\n  render: ({\n    disabled,\n    errorMessage,\n    inputType,\n    label,\n    placeholder,\n    readonly,\n    required,\n    value,\n    ...args\n  }) => ({\n    props: args,\n    template: `\n      <flag-form-field errorMessage=\"${errorMessage}\" [infoMessage]=\"infoMessage\">\n        ${label ? `<label\n          flagLabel\n          ${required && 'required'}\n        >${label}</label>` : ''}\n        ${inputType === 'text' ? `<input\n          flagInput\n          ${disabled && 'disabled'}\n          ${errorMessage && 'error'}\n          ${placeholder && `placeholder=\"${placeholder}\"`}\n          ${readonly && 'readonly'}\n          ${value && `value=\"${value}\"`}\n        />` : ''}\n      </flag-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['text']\n    },\n    label: {\n      control: 'text'\n    },\n  }\n}"
             },
             {
                 "name": "meta",
@@ -2106,12 +2160,12 @@
                 "name": "FormFieldArgs",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "",
+                "rawtype": "literal type",
                 "file": "projects/flagarchive/src/components/form-field/form-field.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 193
+                "kind": 187
             },
             {
                 "name": "ListItemArgs",
@@ -2481,7 +2535,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "FormFieldArgs",
-                    "defaultValue": "{\n  inputType: 'text',\n  label: 'Form Field'\n}"
+                    "defaultValue": "{\n  disabled: false,\n  errorMessage: 'Please enter a location or organization',\n  infoMessage: 'An entity that is either a location or an organization',\n  inputType: 'text',\n  label: 'Location / Organization',\n  placeholder: 'Enter location or organization',\n  readonly: false,\n  required: true,\n  value: '',\n}"
                 },
                 {
                     "name": "Default",
@@ -2501,7 +2555,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FormFieldArgs>",
-                    "defaultValue": "{\n  title: 'Components/Form Field (beta)',\n  component: FlagFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagFormFieldComponent]\n    })\n  ],\n  render: ({ inputType, label, ...args }) => ({\n    props: args,\n    template: `\n      <flag-form-field>\n        ${label ? `<label flagLabel>${label}</label>` : ''}\n        ${inputType === 'text' ? '<input flagInput />' : ''}\n      </flag-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['text']\n    },\n    label: {\n      control: 'text'\n    },\n  }\n}"
+                    "defaultValue": "{\n  title: 'Components/Form Field',\n  component: FlagFormFieldComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [FlagFormFieldComponent]\n    })\n  ],\n  render: ({\n    disabled,\n    errorMessage,\n    inputType,\n    label,\n    placeholder,\n    readonly,\n    required,\n    value,\n    ...args\n  }) => ({\n    props: args,\n    template: `\n      <flag-form-field errorMessage=\"${errorMessage}\" [infoMessage]=\"infoMessage\">\n        ${label ? `<label\n          flagLabel\n          ${required && 'required'}\n        >${label}</label>` : ''}\n        ${inputType === 'text' ? `<input\n          flagInput\n          ${disabled && 'disabled'}\n          ${errorMessage && 'error'}\n          ${placeholder && `placeholder=\"${placeholder}\"`}\n          ${readonly && 'readonly'}\n          ${value && `value=\"${value}\"`}\n        />` : ''}\n      </flag-form-field>\n    `\n  }),\n  argTypes: {\n    inputType: {\n      control: 'select',\n      options: ['text']\n    },\n    label: {\n      control: 'text'\n    },\n  }\n}"
                 }
             ],
             "projects/flagarchive/src/components/skeleton/skeleton.stories.ts": [
@@ -2874,12 +2928,12 @@
                     "name": "FormFieldArgs",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "",
+                    "rawtype": "literal type",
                     "file": "projects/flagarchive/src/components/form-field/form-field.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 193
+                    "kind": 187
                 },
                 {
                     "name": "Story",
@@ -3141,7 +3195,7 @@
                 "linktype": "component",
                 "name": "FlagFormFieldComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
