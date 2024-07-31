@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -7,4 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './form-field.component.scss',
   templateUrl: './form-field.component.html',
 })
-export class FlagFormFieldComponent {}
+export class FlagFormFieldComponent {
+  public errorMessage = input<string>();
+  public infoMessage = input<string>();
+}

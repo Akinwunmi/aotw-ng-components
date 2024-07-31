@@ -2,11 +2,12 @@
 
 :host {
   @include typography-body-small-medium;
+  align-items: center;
   background-color: var(--flag-color-primary-100);
   border-radius: var(--flag-radius-lg);
   box-sizing: border-box;
   color: var(--flag-color-primary-500);
-  display: inline-block;
+  display: inline-flex;
   height: var(--flag-size-sm);
   padding-inline: var(--flag-space-md);
 
